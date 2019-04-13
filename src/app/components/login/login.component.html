@@ -1,0 +1,64 @@
+<section class="fdb-block fp-active"
+         style="background-image: url(https://cdn.jsdelivr.net/gh/froala/design-blocks@2.0.1/dist/imgs//hero/red.svg);"
+         data-block-type="forms" data-id="2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
+                <div class="fdb-box">
+                    <div class="row">
+                        <div class="col">
+                            <h1>登录</h1>
+                        </div>
+                    </div>
+                    <!--<form #f="ngForm">-->
+                    <form #f="ngForm">
+                        <div class="row mt-4 form-group">
+                            <input type="text"
+                                   name="username"
+                                   class="form-control"
+                                   placeholder="Email"
+                                   ngModel
+                                   required
+                                   #username="ngModel">
+                        </div>
+                        <div class ="help-block" *ngIf="!username.valid && username.touched">Please enter a username</div>
+                        <div class="row mt-4 form-group">
+                            <input type="password"
+                                   name="password"
+                                   class="form-control"
+                                   placeholder="Password"
+                                   ngModel
+                                   required
+                                   #password="ngModel">
+
+                        </div>
+                        <div class ="help-block" *ngIf="!password.valid && password.touched">Please enter a password</div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" ngModel [(ngModel)]="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <div class="row mt-4 form-group">
+                            <button class="btn btn-primary btn-block" (click)="login()" type="button">Submit
+                            </button>
+
+                        </div>
+                        <div class="row form-group">
+                            <button class="btn btn-block facebook-color" (click)="facebookLogin()" type="button">facebook</button>
+                        </div>
+                        <div class="row form-group">
+                            <a class="btn btn-success btn-block" routerLink="/register" role="button">Register</a>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12 col-sm-6 col-md-6">
+                                <p class="text-right small"><a href="https://www.froala.com">Recover Username </a></p>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6">
+                                <p class="text-left small"><a href="https://www.froala.com">Recover Password</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

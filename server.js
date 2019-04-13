@@ -5,6 +5,10 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +24,18 @@ app.use(function(req, res, next) {
     // express will pass the header settings to all
     next();
 });
+
+// express-session
+app.use(cookieParser());
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET || 'keyboardman'
+}));
+
+// Passport JS
+app.use(passport.initialize());
+app.use(passport.session());
 
 // environment setting
 var env = process.env.NODE_ENV || 'development';
@@ -37,7 +53,7 @@ app.set('port', port);
 
 
 // import all the server files needed
-// require('./server/app')(app);
+require('./server/app')(app);
 
 
 // For Build: Catch all other routes and return the index file -- BUILDING
@@ -50,6 +66,3 @@ app.get('*', function (req, res) {
 const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 8071'));
 
-/*var dbServer = require('./test-mongodb/app');
-//require('./test-mongodb/app')(app);
-dbServer(app);*/
