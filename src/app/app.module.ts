@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {UserService} from './service/user.service';
 import {SharedService} from './service/shared.service';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderbarComponent } from './components/headerbar/headerbar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
     ProfileAdminComponent,
     ProfileUserComponent,
     MainComponent,
+    HeaderbarComponent,
   ],
   imports: [
     BrowserModule,
