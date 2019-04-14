@@ -26,7 +26,11 @@ export class LoginComponent implements OnInit {
     login() {
         const username = this.loginForm.value.username;
         const password = this.loginForm.value.password;
-        this.userService.login(username, password).subscribe(
+        const body = {
+            username: username,
+            password: password
+        };
+        this.userService.login(body).subscribe(
             (user: any) => {
                 // console.log('In login() component, the front end service returns: ' + user);
                 this.sharedService.user = user;

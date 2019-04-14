@@ -21,43 +21,53 @@
                                        name="firstName"
                                        class="form-control"
                                        placeholder="First Name"
-                                       ngModel
+                                       [(ngModel)]="user.firstName"
                                        required
                                        #firstName="ngModel">
                             </div>
                             <div class="col">
                                 <input type="text"
+                                       name="middleName"
                                        class="form-control"
                                        placeholder="Middle Name"
-                                       ngModel
-                                       required
+                                       [(ngModel)]="user.middleName"
                                        #middleName="ngModel">
                             </div>
                             <div class="col">
                                 <input type="text"
+                                       name="lastName"
                                        class="form-control"
-                                       placeholder="LastName"
-                                       ngModel
+                                       placeholder="Last Name"
+                                       [(ngModel)]="user.lastName"
                                        required
                                        #lastName="ngModel">
                             </div>
 
                         </div>
-                        <!--gneder and date of birth-->
+                        <!--gender and date of birth-->
                         <div class="row align-items-center mt-4">
                             <div class="col">
                                 <label for="genderId">Gender</label>
                                 <div id="genderId">
-                                    <input type="radio" value="M"> Male
-                                    <input type="radio" value="F"> Female
+                                    <select class="form-control"
+                                            name="gender"
+                                            required
+                                            [(ngModel)]="user.gender"
+                                            #gender="ngModel">
+                                        <option value="M">M</option>
+                                        <option value="F">F</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="dobPicker" class="control-label">Date of birth</label>
-                                <div class="controls" id="dobPicker">
-                                    <select name="dob-day" id="dob-day">
+                                <div id="dobPicker" class="row">
+                                    <div class="col"><select class="form-control"
+                                                             name="dobDay"
+                                                             id="dob-day"
+                                                             ngModel
+                                                             required>
                                         <option value="">Day</option>
-                                        <option value="">---</option>
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>
@@ -89,10 +99,10 @@
                                         <option value="29">29</option>
                                         <option value="30">30</option>
                                         <option value="31">31</option>
-                                    </select>
-                                    <select name="dob-month" id="dob-month">
+                                    </select></div>
+                                    <div class="col"><select class="form-control" name="dobMonth" id="dob-month" ngModel
+                                                             required>
                                         <option value="">Month</option>
-                                        <option value="">-----</option>
                                         <option value="01">January</option>
                                         <option value="02">February</option>
                                         <option value="03">March</option>
@@ -105,10 +115,10 @@
                                         <option value="10">October</option>
                                         <option value="11">November</option>
                                         <option value="12">December</option>
-                                    </select>
-                                    <select name="dob-year" id="dob-year">
+                                    </select></div>
+                                    <div class="col"><select class="form-control" name="dobYear" id="dob-year" ngModel
+                                                             required>
                                         <option value="">Year</option>
-                                        <option value="">----</option>
                                         <option value="2012">2012</option>
                                         <option value="2011">2011</option>
                                         <option value="2010">2010</option>
@@ -221,7 +231,7 @@
                                         <option value="1903">1903</option>
                                         <option value="1901">1901</option>
                                         <option value="1900">1900</option>
-                                    </select>
+                                    </select></div>
                                 </div>
                             </div>
 
@@ -230,8 +240,12 @@
                         <div class="row align-items-center mt-4">
                             <div class="col">
                                 <label for="countryPicker" class="control-label">Country/Region</label>
-                                <div class="controls" id="countryPicker">
-                                    <select name="country">
+                                <div id="countryPicker">
+                                    <select class="form-control"
+                                            name="country"
+                                            required
+                                            [(ngModel)]="user.countryRegion"
+                                            #country="ngModel">
                                         <option value="US">United States</option>
                                         <option value="CN">China</option>
                                     </select>
@@ -264,7 +278,7 @@
                                        class="form-control"
                                        name="city"
                                        placeholder="City"
-                                       ngModel
+                                       [(ngModel)]="user.city"
                                        required
                                        #city=ngModel>
                             </div>
@@ -273,7 +287,7 @@
                                        class="form-control"
                                        name="state"
                                        placeholder="State/Province"
-                                       ngModel
+                                       [(ngModel)]="user.stateOrProvince"
                                        required
                                        #state=ngModel>
                             </div>
@@ -282,7 +296,7 @@
                                        class="form-control"
                                        name="zipCode"
                                        placeholder="Zip Code"
-                                       ngModel
+                                       [(ngModel)]="user.postalCode"
                                        required
                                        #zipCode=ngModel>
                             </div>
@@ -294,7 +308,7 @@
                                        class="form-control"
                                        placeholder="Email"
                                        name="email"
-                                       ngModel
+                                       [(ngModel)]="user.email"
                                        required
                                        #email=ngModel>
                             </div>
@@ -304,19 +318,43 @@
                             <div class="col">
                                 <input type="text"
                                        class="form-control"
+                                       placeholder="Phone Number"
+                                       name="phoneNumber"
+                                       [(ngModel)]="user.phone"
+                                       required
+                                       #phoneNumber=ngModel>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mt-4">
+                            <div class="col">
+                                <input type="text"
+                                       class="form-control"
                                        placeholder="Username"
                                        name="username"
-                                       ngModel
+                                       [(ngModel)]="user.username"
                                        required
                                        #username=ngModel>
                             </div>
                         </div>
                         <div class="row align-items-center mt-4">
                             <div class="col">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password"
+                                       name="password"
+                                       class="form-control"
+                                       placeholder="Password"
+                                       [(ngModel)]="user.password"
+                                       required
+                                       #password=ngModel>
                             </div>
                             <div class="col">
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="Confirm Password"
+                                       name="retypePassword"
+                                       ngModel
+                                       required
+                                       #retypePassword=ngModel>
                             </div>
                         </div>
                         <!--two checkboxes: email subscription and terms&conditions-->
@@ -340,7 +378,7 @@
                                     </label>
                                 </div>
 
-                                <button class="btn btn-success btn-block mt-4">加入高端黑</button>
+                                <button class="btn btn-success btn-block mt-4" (click)="createUser()">加入高端黑</button>
                             </div>
                         </div>
                     </form>

@@ -34,12 +34,8 @@ export class UserService {
 
   }
 
-  register(username: string, password: string) {
+  register(user) {
     this.options.withCredentials = true;
-    const user = {
-      username: username,
-      password: password
-    };
     return this.http.post(this.baseUrl + '/api/register', user, this.options)
         .pipe(map(
             (res: Response) => {
@@ -48,13 +44,9 @@ export class UserService {
         ));
   }
 
-  login(username: string, password: string) {
+  login(body) {
     console.log('front user service login() called');
     this.options.withCredentials = true;
-    const body = {
-      username: username,
-      password: password
-    };
     return this.http.post(this.baseUrl + '/api/login', body, this.options).pipe(map(
         (res: Response) => {
           console.log('Inside login() response, res is ' + res);

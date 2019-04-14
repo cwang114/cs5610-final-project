@@ -48,10 +48,6 @@ app.set('baseUrl', config.BASE_URL);
 const port = process.env.PORT || '8071';
 app.set('port', port);
 
-// test the /api/test url
-// require('./test')(app);
-
-
 // import all the server files needed
 require('./server/app')(app);
 
@@ -61,6 +57,9 @@ app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist/final-project/index.html'));
 });
 
+// DB URL
+console.log(config.DB_URL);
+var client = mongoose.connect(config.DB_URL, {useNewUrlParser: true});
 
 // Create HTTP server
 const server = http.createServer(app);
