@@ -1,10 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {User} from '../model/User';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {map} from 'rxjs/operators';
 import {Role} from '../model/Role';
+import {Router} from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthenticationService {
     baseUrl = environment.baseUrl;
     userApiUrl = '/api/user';
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router, private zone: NgZone) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
@@ -46,6 +47,8 @@ export class AuthenticationService {
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
         this.currentUser = null;
+        console.log('after logout, the currentUserValue() is ' + this.currentUserValue);
+        this.zone.run(() => this.router.navigateByUrl('/'));
         // console.log('authentication service: logout() called');
         // console.log('to backend: ' + this.baseUrl + '/api/logout');
         // return this.http.post(this.baseUrl + '/api/logout', '', this.options).pipe(

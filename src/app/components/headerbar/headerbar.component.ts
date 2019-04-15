@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, NgZone, OnInit, Output} from '@angular/core';
 import {User} from '../../model/User';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../service/authentication.service';
@@ -11,31 +11,47 @@ import {Role} from '../../model/Role';
 })
 export class HeaderbarComponent implements OnInit {
 
+    @Input()
     currentUser: User;
+
+    @Output()
+    changeCurrentUser = new EventEmitter<User>();
 
     constructor(private router: Router,
                 private authenticationService: AuthenticationService) {
         if (this.authenticationService.currentUser) {
-            this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+            this.authenticationService.currentUser.subscribe(
+                x => {
+                    console.log('x is ' + JSON.stringify(x));
+                    this.currentUser = x;
+                    console.log('After equalling to x, the current user is ' + JSON.stringify(this.currentUser));
+                });
         }
     }
 
     ngOnInit() {
     }
 
-    get isAdmin() {
+    isAdmin() {
         return this.currentUser && this.currentUser.role === Role.Admin;
     }
 
-    get isLoggedIn() {
+    isLoggedIn() {
+        console.log('inside isloggedin(), the current user is ' + JSON.stringify(this.currentUser));
+        console.log('At this time, the current user in authentic service is ' +
+            JSON.stringify(this.authenticationService.currentUserValue));
         return this.currentUser !== null;
     }
 
     logout() {
         console.log('headbar.ts logout() called');
-        this.authenticationService.logout();
         this.currentUser = null;
-        this.router.navigate(['/']);
+        this.changeCurrentUserFunc(this.currentUser);
+        this.authenticationService.logout();
+    }
+
+    changeCurrentUserFunc(user: User) {
+        this.changeCurrentUser.emit(user);
     }
 
 }

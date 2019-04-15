@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {UserService} from '../../service/user.service';
 import {Router} from '@angular/router';
 import {User} from '../../model/User';
+import {AuthenticationService} from '../../service/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +13,13 @@ import {User} from '../../model/User';
 export class RegisterComponent implements OnInit {
 
   @ViewChild('f') registerForm: NgForm;
+  currentUser: User;
   user: User;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService,
+              private router: Router,
+              private authenticationService: AuthenticationService) {
+    this.currentUser = null;
     this.user = new User('', '', '', '', '', '', new Date(), '',
         '', '', '', '', '', '', 'User');
   }
