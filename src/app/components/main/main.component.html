@@ -1,4 +1,6 @@
 <app-headerbar></app-headerbar>
+<p *ngIf="currentUser">Your role is: <strong>{{currentUser.role}}</strong>.</p>
+<p *ngIf="userFromApi">{{userFromApi.firstName}} {{userFromApi.lastName}}</p>
 <section class="fdb-block fp-active" data-block-type="contents" data-id="5">
   <div class="container">
     <div class="row align-items-center">

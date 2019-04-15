@@ -13,9 +13,10 @@ import { MainComponent } from './components/main/main.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {UserService} from './service/user.service';
-import {SharedService} from './service/shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderbarComponent } from './components/headerbar/headerbar.component';
+import {AuthGuardService} from './service/auth-guard.service';
+import {AuthenticationService} from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HeaderbarComponent } from './components/headerbar/headerbar.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserService, SharedService],
+  providers: [UserService, AuthGuardService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -46,7 +46,7 @@
                         </div>
                         <!--gender and date of birth-->
                         <div class="row align-items-center mt-4">
-                            <div class="col">
+                            <div class="col-12 col-sm-4 col-md-4">
                                 <label for="genderId">Gender</label>
                                 <div id="genderId">
                                     <select class="form-control"
@@ -54,12 +54,12 @@
                                             required
                                             [(ngModel)]="user.gender"
                                             #gender="ngModel">
-                                        <option value="M">M</option>
-                                        <option value="F">F</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-sm-8 col-md-8">
                                 <label for="dobPicker" class="control-label">Date of birth</label>
                                 <div id="dobPicker" class="row">
                                     <div class="col"><select class="form-control"

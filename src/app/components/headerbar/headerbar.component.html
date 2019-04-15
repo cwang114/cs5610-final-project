@@ -41,13 +41,17 @@
                style="outline: none; display: inline-block;">高端黑会员</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fr-view" href="/login"
-               style="outline: none; display: inline-block;">登录</a>
+            <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
           </li>
         </ul>
-
-        <a class="btn btn-light ml-md-3 fr-view" href="/register"
+        <a class="btn btn-light ml-md-3 fr-view" routerLink="/login" *ngIf="!isLoggedIn"
+           style="outline: none; display: inline-block;">登陆</a>
+        <a class="btn btn-light ml-md-3 fr-view" routerLink="/register" *ngIf="!isLoggedIn"
            style="outline: none; display: inline-block;">注册</a>
+        <button class="btn btn-danger" *ngIf="isLoggedIn" (click)="logout()" type="button">登出
+        </button>
+        <!--<a class="btn btn-light ml-md-3 fr-view" *ngIf="isLoggedIn" (click)="logout()"-->
+           <!--style="outline: none; display: inline-block;">登出</a>-->
       </div>
     </nav>
   </div>
