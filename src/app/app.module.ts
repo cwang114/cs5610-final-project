@@ -17,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderbarComponent } from './components/headerbar/headerbar.component';
 import {AuthGuardService} from './service/auth-guard.service';
 import {AuthenticationService} from './service/authentication.service';
+import { AdminSidebarComponent } from './components/profile-admin/admin-sidebar/admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {AuthenticationService} from './service/authentication.service';
     ProfileUserComponent,
     MainComponent,
     HeaderbarComponent,
+    AdminSidebarComponent,
   ],
   imports: [
     BrowserModule,

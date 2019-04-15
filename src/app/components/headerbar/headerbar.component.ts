@@ -22,9 +22,9 @@ export class HeaderbarComponent implements OnInit {
         if (this.authenticationService.currentUser) {
             this.authenticationService.currentUser.subscribe(
                 x => {
-                    console.log('x is ' + JSON.stringify(x));
+                    // console.log('x is ' + JSON.stringify(x));
                     this.currentUser = x;
-                    console.log('After equalling to x, the current user is ' + JSON.stringify(this.currentUser));
+                    // console.log('After equalling to x, the current user is ' + JSON.stringify(this.currentUser));
                 });
         }
     }
@@ -37,14 +37,14 @@ export class HeaderbarComponent implements OnInit {
     }
 
     isLoggedIn() {
-        console.log('inside isloggedin(), the current user is ' + JSON.stringify(this.currentUser));
-        console.log('At this time, the current user in authentic service is ' +
-            JSON.stringify(this.authenticationService.currentUserValue));
+        // console.log('inside isloggedin(), the current user is ' + JSON.stringify(this.currentUser));
+        // console.log('At this time, the current user in authentic service is ' +
+        //     JSON.stringify(this.authenticationService.currentUserValue));
         return this.currentUser !== null;
     }
 
     logout() {
-        console.log('headbar.ts logout() called');
+        // console.log('headbar.ts logout() called');
         this.currentUser = null;
         this.changeCurrentUserFunc(this.currentUser);
         this.authenticationService.logout();
