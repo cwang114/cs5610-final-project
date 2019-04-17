@@ -41,6 +41,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
 /* harmony import */ var _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/profile-admin/profile-admin.component */ "./src/app/components/profile-admin/profile-admin.component.ts");
 /* harmony import */ var _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./service/auth-guard.service */ "./src/app/service/auth-guard.service.ts");
+/* harmony import */ var _components_user_management_user_management_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/user-management/user-management.component */ "./src/app/components/user-management/user-management.component.ts");
+/* harmony import */ var _components_flight_management_flight_management_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/flight-management/flight-management.component */ "./src/app/components/flight-management/flight-management.component.ts");
+/* harmony import */ var _components_airport_management_airport_management_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/airport-management/airport-management.component */ "./src/app/components/airport-management/airport-management.component.ts");
+
+
+
 
 
 
@@ -52,6 +58,9 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: '', component: _components_main_main_component__WEBPACK_IMPORTED_MODULE_5__["MainComponent"] },
     { path: 'admin', component: _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_6__["ProfileAdminComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
+    { path: 'admin/user-management', component: _components_user_management_user_management_component__WEBPACK_IMPORTED_MODULE_8__["UserManagementComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
+    { path: 'admin/airport-management', component: _components_airport_management_airport_management_component__WEBPACK_IMPORTED_MODULE_10__["AirportManagementComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
+    { path: 'admin/flight-management', component: _components_flight_management_flight_management_component__WEBPACK_IMPORTED_MODULE_9__["FlightManagementComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
     { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     { path: 'register', component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"] }
 ];
@@ -140,21 +149,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_route_management_route_management_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/route-management/route-management.component */ "./src/app/components/route-management/route-management.component.ts");
-/* harmony import */ var _components_footbar_footbar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/footbar/footbar.component */ "./src/app/components/footbar/footbar.component.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
-/* harmony import */ var _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/profile-admin/profile-admin.component */ "./src/app/components/profile-admin/profile-admin.component.ts");
-/* harmony import */ var _components_profile_user_profile_user_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/profile-user/profile-user.component */ "./src/app/components/profile-user/profile-user.component.ts");
-/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _service_user_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./service/user.service */ "./src/app/service/user.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _components_headerbar_headerbar_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/headerbar/headerbar.component */ "./src/app/components/headerbar/headerbar.component.ts");
-/* harmony import */ var _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./service/auth-guard.service */ "./src/app/service/auth-guard.service.ts");
-/* harmony import */ var _service_authentication_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./service/authentication.service */ "./src/app/service/authentication.service.ts");
-/* harmony import */ var _components_profile_admin_admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/profile-admin/admin-sidebar/admin-sidebar.component */ "./src/app/components/profile-admin/admin-sidebar/admin-sidebar.component.ts");
+/* harmony import */ var _components_footbar_footbar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/footbar/footbar.component */ "./src/app/components/footbar/footbar.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
+/* harmony import */ var _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/profile-admin/profile-admin.component */ "./src/app/components/profile-admin/profile-admin.component.ts");
+/* harmony import */ var _components_profile_user_profile_user_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/profile-user/profile-user.component */ "./src/app/components/profile-user/profile-user.component.ts");
+/* harmony import */ var _components_main_main_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/main/main.component */ "./src/app/components/main/main.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _service_user_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./service/user.service */ "./src/app/service/user.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_headerbar_headerbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/headerbar/headerbar.component */ "./src/app/components/headerbar/headerbar.component.ts");
+/* harmony import */ var _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./service/auth-guard.service */ "./src/app/service/auth-guard.service.ts");
+/* harmony import */ var _service_authentication_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./service/authentication.service */ "./src/app/service/authentication.service.ts");
+/* harmony import */ var _components_profile_admin_admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/profile-admin/admin-sidebar/admin-sidebar.component */ "./src/app/components/profile-admin/admin-sidebar/admin-sidebar.component.ts");
+/* harmony import */ var _components_user_management_user_management_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/user-management/user-management.component */ "./src/app/components/user-management/user-management.component.ts");
+/* harmony import */ var _components_airport_management_airport_management_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/airport-management/airport-management.component */ "./src/app/components/airport-management/airport-management.component.ts");
+/* harmony import */ var _components_flight_management_flight_management_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/flight-management/flight-management.component */ "./src/app/components/flight-management/flight-management.component.ts");
+/* harmony import */ var _components_profile_admin_admin_topbar_admin_topbar_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/profile-admin/admin-topbar/admin-topbar.component */ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.ts");
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! angular-datatables */ "./node_modules/angular-datatables/index.js");
+
+
+
+
 
 
 
@@ -182,28 +199,144 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _components_route_management_route_management_component__WEBPACK_IMPORTED_MODULE_5__["RouteManagementComponent"],
-                _components_footbar_footbar_component__WEBPACK_IMPORTED_MODULE_6__["FootbarComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
-                _components_register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"],
-                _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_9__["ProfileAdminComponent"],
-                _components_profile_user_profile_user_component__WEBPACK_IMPORTED_MODULE_10__["ProfileUserComponent"],
-                _components_main_main_component__WEBPACK_IMPORTED_MODULE_11__["MainComponent"],
-                _components_headerbar_headerbar_component__WEBPACK_IMPORTED_MODULE_16__["HeaderbarComponent"],
-                _components_profile_admin_admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_19__["AdminSidebarComponent"],
+                _components_footbar_footbar_component__WEBPACK_IMPORTED_MODULE_5__["FootbarComponent"],
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
+                _components_register_register_component__WEBPACK_IMPORTED_MODULE_7__["RegisterComponent"],
+                _components_profile_admin_profile_admin_component__WEBPACK_IMPORTED_MODULE_8__["ProfileAdminComponent"],
+                _components_profile_user_profile_user_component__WEBPACK_IMPORTED_MODULE_9__["ProfileUserComponent"],
+                _components_main_main_component__WEBPACK_IMPORTED_MODULE_10__["MainComponent"],
+                _components_headerbar_headerbar_component__WEBPACK_IMPORTED_MODULE_15__["HeaderbarComponent"],
+                _components_profile_admin_admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_18__["AdminSidebarComponent"],
+                _components_user_management_user_management_component__WEBPACK_IMPORTED_MODULE_19__["UserManagementComponent"],
+                _components_airport_management_airport_management_component__WEBPACK_IMPORTED_MODULE_20__["AirportManagementComponent"],
+                _components_flight_management_flight_management_component__WEBPACK_IMPORTED_MODULE_21__["FlightManagementComponent"],
+                _components_profile_admin_admin_topbar_admin_topbar_component__WEBPACK_IMPORTED_MODULE_22__["AdminTopbarComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
+                angular_datatables__WEBPACK_IMPORTED_MODULE_23__["DataTablesModule"]
             ],
-            providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"], _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_17__["AuthGuardService"], _service_authentication_service__WEBPACK_IMPORTED_MODULE_18__["AuthenticationService"]],
+            providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_13__["UserService"], _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuardService"], _service_authentication_service__WEBPACK_IMPORTED_MODULE_17__["AuthenticationService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/airport-management/airport-management.component.css":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/airport-management/airport-management.component.css ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWlycG9ydC1tYW5hZ2VtZW50L2FpcnBvcnQtbWFuYWdlbWVudC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/airport-management/airport-management.component.html":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/airport-management/airport-management.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  airport-management works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/airport-management/airport-management.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/airport-management/airport-management.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: AirportManagementComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AirportManagementComponent", function() { return AirportManagementComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AirportManagementComponent = /** @class */ (function () {
+    function AirportManagementComponent() {
+    }
+    AirportManagementComponent.prototype.ngOnInit = function () {
+    };
+    AirportManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-airport-management',
+            template: __webpack_require__(/*! ./airport-management.component.html */ "./src/app/components/airport-management/airport-management.component.html"),
+            styles: [__webpack_require__(/*! ./airport-management.component.css */ "./src/app/components/airport-management/airport-management.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AirportManagementComponent);
+    return AirportManagementComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/flight-management/flight-management.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/flight-management/flight-management.component.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZmxpZ2h0LW1hbmFnZW1lbnQvZmxpZ2h0LW1hbmFnZW1lbnQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/flight-management/flight-management.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/flight-management/flight-management.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  flight-management works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/flight-management/flight-management.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/flight-management/flight-management.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: FlightManagementComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlightManagementComponent", function() { return FlightManagementComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FlightManagementComponent = /** @class */ (function () {
+    function FlightManagementComponent() {
+    }
+    FlightManagementComponent.prototype.ngOnInit = function () {
+    };
+    FlightManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-flight-management',
+            template: __webpack_require__(/*! ./flight-management.component.html */ "./src/app/components/flight-management/flight-management.component.html"),
+            styles: [__webpack_require__(/*! ./flight-management.component.css */ "./src/app/components/flight-management/flight-management.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], FlightManagementComponent);
+    return FlightManagementComponent;
 }());
 
 
@@ -548,7 +681,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Sidebar -->\n<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n    <!-- Sidebar - Brand -->\n    <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/\">\n        <div class=\"sidebar-brand-icon rotate-n-15\">\n            <i class=\"fas fa-laugh-wink\"></i>\n        </div>\n        <div class=\"sidebar-brand-text mx-3\">菊花航空</div>\n    </a>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider my-0\">\n\n    <!-- Nav Item - Dashboard -->\n    <li class=\"nav-item active\">\n        <a class=\"nav-link\" href=\"/admin\">\n            <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n            <span>Dashboard</span></a>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider\">\n\n    <!-- Heading -->\n    <div class=\"sidebar-heading\">\n        Components\n    </div>\n\n    <!-- Nav Item - user management Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\"\n           aria-expanded=\"true\" aria-controls=\"collapseTwo\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span>User Management</span>\n        </a>\n        <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">\n            <div class=\"bg-white py-2 collapse-inner rounded\">\n                <h6 class=\"collapse-header\">Other user options:</h6>\n                <a class=\"collapse-item\" href=\"buttons.html\">Buttons</a>\n                <a class=\"collapse-item\" href=\"cards.html\">Cards</a>\n            </div>\n        </div>\n    </li>\n\n    <!-- Nav Item - airport Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseUtilities\"\n           aria-expanded=\"true\" aria-controls=\"collapseUtilities\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span>Airport Management</span>\n        </a>\n        <div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\"\n             data-parent=\"#accordionSidebar\">\n            <div class=\"bg-white py-2 collapse-inner rounded\">\n                <h6 class=\"collapse-header\">Other airport options:</h6>\n                <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>\n                <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>\n                <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>\n                <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>\n            </div>\n        </div>\n    </li>\n\n    <!-- Nav Item - flight Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseFlights\"\n           aria-expanded=\"true\" aria-controls=\"collapseFlights\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span>Flight Management</span>\n        </a>\n        <div id=\"collapseFlights\" class=\"collapse\" aria-labelledby=\"headingUtilities\"\n             data-parent=\"#accordionSidebar\">\n            <div class=\"bg-white py-2 collapse-inner rounded\">\n                <h6 class=\"collapse-header\">Other airport options:</h6>\n                <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>\n                <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>\n                <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>\n                <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>\n            </div>\n        </div>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider\">\n\n    <!-- Heading -->\n    <div class=\"sidebar-heading\">\n        Pages\n    </div>\n\n    <!-- Nav Item - Pages Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapsePages\"\n           aria-expanded=\"true\" aria-controls=\"collapsePages\">\n            <i class=\"fas fa-fw fa-folder\"></i>\n            <span>Pages</span>\n        </a>\n        <div id=\"collapsePages\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\">\n            <div class=\"bg-white py-2 collapse-inner rounded\">\n                <h6 class=\"collapse-header\">Login Screens:</h6>\n                <a class=\"collapse-item\" href=\"login.html\">Login</a>\n                <a class=\"collapse-item\" href=\"register.html\">Register</a>\n                <a class=\"collapse-item\" href=\"forgot-password.html\">Forgot Password</a>\n                <div class=\"collapse-divider\"></div>\n                <h6 class=\"collapse-header\">Other Pages:</h6>\n                <a class=\"collapse-item\" href=\"404.html\">404 Page</a>\n                <a class=\"collapse-item\" href=\"blank.html\">Blank Page</a>\n            </div>\n        </div>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider d-none d-md-block\">\n\n    <!-- Sidebar Toggler (Sidebar) -->\n    <div class=\"text-center d-none d-md-inline\">\n        <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n    </div>\n\n</ul>\n<!-- End of Sidebar -->\n"
+module.exports = "<!-- Sidebar -->\n<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n    <!-- Sidebar - Brand -->\n    <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/\">\n        <div class=\"sidebar-brand-icon rotate-n-15\">\n            <i class=\"fas fa-laugh-wink\"></i>\n        </div>\n        <div class=\"sidebar-brand-text mx-3\">菊花航空</div>\n    </a>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider my-0\">\n\n    <!-- Nav Item - Dashboard -->\n    <li class=\"nav-item active\">\n        <a class=\"nav-link\" href=\"/admin\">\n            <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n            <span>Dashboard</span></a>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider\">\n\n    <!-- Heading -->\n    <div class=\"sidebar-heading\">\n        Components\n    </div>\n\n    <!-- Nav Item - user management Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseTwo\"\n           aria-expanded=\"true\" aria-controls=\"collapseTwo\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span routerLink=\"/admin/user-management\">User Management</span>\n        </a>\n    </li>\n\n    <!-- Nav Item - airport Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseUtilities\"\n           aria-expanded=\"true\" aria-controls=\"collapseUtilities\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span routerLink=\"/admin/airport-management\">Airport Management</span>\n        </a>\n        <!--<div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\"-->\n             <!--data-parent=\"#accordionSidebar\">-->\n            <!--<div class=\"bg-white py-2 collapse-inner rounded\">-->\n                <!--<h6 class=\"collapse-header\">Other airport options:</h6>-->\n                <!--<a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>-->\n                <!--<a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>-->\n                <!--<a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>-->\n                <!--<a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>-->\n            <!--</div>-->\n        <!--</div>-->\n    </li>\n\n    <!-- Nav Item - flight Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseFlights\"\n           aria-expanded=\"true\" aria-controls=\"collapseFlights\">\n            <i class=\"fas fa-fw fa-cog\"></i>\n            <span routerLink=\"/admin/flight-management\">Flight Management</span>\n        </a>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider\">\n\n    <!-- Heading -->\n    <div class=\"sidebar-heading\">\n        Pages\n    </div>\n\n    <!-- Nav Item - Pages Collapse Menu -->\n    <li class=\"nav-item\">\n        <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapsePages\"\n           aria-expanded=\"true\" aria-controls=\"collapsePages\">\n            <i class=\"fas fa-fw fa-folder\"></i>\n            <span>Pages</span>\n        </a>\n        <div id=\"collapsePages\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\">\n            <div class=\"bg-white py-2 collapse-inner rounded\">\n                <h6 class=\"collapse-header\">Login Screens:</h6>\n                <a class=\"collapse-item\" href=\"login.html\">Login</a>\n                <a class=\"collapse-item\" href=\"register.html\">Register</a>\n                <a class=\"collapse-item\" href=\"forgot-password.html\">Forgot Password</a>\n                <div class=\"collapse-divider\"></div>\n                <h6 class=\"collapse-header\">Other Pages:</h6>\n                <a class=\"collapse-item\" href=\"404.html\">404 Page</a>\n                <a class=\"collapse-item\" href=\"blank.html\">Blank Page</a>\n            </div>\n        </div>\n    </li>\n\n    <!-- Divider -->\n    <hr class=\"sidebar-divider d-none d-md-block\">\n\n    <!-- Sidebar Toggler (Sidebar) -->\n    <div class=\"text-center d-none d-md-inline\">\n        <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n    </div>\n\n</ul>\n<!-- End of Sidebar -->\n"
 
 /***/ }),
 
@@ -586,6 +719,62 @@ var AdminSidebarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.css":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/profile-admin/admin-topbar/admin-topbar.component.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZmlsZS1hZG1pbi9hZG1pbi10b3BiYXIvYWRtaW4tdG9wYmFyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.html":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/profile-admin/admin-topbar/admin-topbar.component.html ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Topbar -->\n<nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n\n  <!-- Sidebar Toggle (Topbar) -->\n  <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n    <i class=\"fa fa-bars\"></i>\n  </button>\n\n  <!-- Topbar Navbar -->\n  <ul class=\"navbar-nav ml-auto\">\n\n    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\"\n         data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n        <i class=\"fas fa-search fa-fw\"></i>\n      </a>\n      <!-- Dropdown - Messages -->\n      <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\"\n           aria-labelledby=\"searchDropdown\">\n        <form class=\"form-inline mr-auto w-100 navbar-search\">\n          <div class=\"input-group\">\n            <input type=\"text\" class=\"form-control bg-light border-0 small\"\n                   placeholder=\"Search for...\" aria-label=\"Search\"\n                   aria-describedby=\"basic-addon2\">\n            <div class=\"input-group-append\">\n              <button class=\"btn btn-primary\" type=\"button\">\n                <i class=\"fas fa-search fa-sm\"></i>\n              </button>\n            </div>\n          </div>\n        </form>\n      </div>\n    </li>\n\n    <!-- Nav Item - Alerts -->\n    <li class=\"nav-item dropdown no-arrow mx-1\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\"\n         data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n        <i class=\"fas fa-bell fa-fw\"></i>\n        <!-- Counter - Alerts -->\n        <span class=\"badge badge-danger badge-counter\">3+</span>\n      </a>\n      <!-- Dropdown - Alerts -->\n      <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n           aria-labelledby=\"alertsDropdown\">\n        <h6 class=\"dropdown-header\">\n          Alerts Center\n        </h6>\n        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n          <div class=\"mr-3\">\n            <div class=\"icon-circle bg-primary\">\n              <i class=\"fas fa-file-alt text-white\"></i>\n            </div>\n          </div>\n          <div>\n            <div class=\"small text-gray-500\">December 12, 2019</div>\n            <span class=\"font-weight-bold\">A new monthly report is ready to download!</span>\n          </div>\n        </a>\n        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n          <div class=\"mr-3\">\n            <div class=\"icon-circle bg-success\">\n              <i class=\"fas fa-donate text-white\"></i>\n            </div>\n          </div>\n          <div>\n            <div class=\"small text-gray-500\">December 7, 2019</div>\n            $290.29 has been deposited into your account!\n          </div>\n        </a>\n        <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Show All Alerts</a>\n      </div>\n    </li>\n\n    <!-- Nav Item - Messages -->\n    <li class=\"nav-item dropdown no-arrow mx-1\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"messagesDropdown\" role=\"button\"\n         data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n        <i class=\"fas fa-envelope fa-fw\"></i>\n        <!-- Counter - Messages -->\n        <span class=\"badge badge-danger badge-counter\">7</span>\n      </a>\n      <!-- Dropdown - Messages -->\n      <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n           aria-labelledby=\"messagesDropdown\">\n        <h6 class=\"dropdown-header\">\n          Message Center\n        </h6>\n        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n          <div class=\"dropdown-list-image mr-3\">\n            <img class=\"rounded-circle\" src=\"https://source.unsplash.com/fn_BT9fwg_E/60x60\"\n                 alt=\"\">\n            <div class=\"status-indicator bg-success\"></div>\n          </div>\n          <div class=\"font-weight-bold\">\n            <div class=\"text-truncate\">Hi there! I am wondering if you can help me with a\n              problem I've been having.\n            </div>\n            <div class=\"small text-gray-500\">Emily Fowler · 58m</div>\n          </div>\n        </a>\n        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n          <div class=\"dropdown-list-image mr-3\">\n            <img class=\"rounded-circle\" src=\"https://source.unsplash.com/AU4VPcFN4LE/60x60\"\n                 alt=\"\">\n            <div class=\"status-indicator\"></div>\n          </div>\n          <div>\n            <div class=\"text-truncate\">I have the photos that you ordered last month, how would\n              you like them sent to you?\n            </div>\n            <div class=\"small text-gray-500\">Jae Chun · 1d</div>\n          </div>\n        </a>\n        <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Read More Messages</a>\n      </div>\n    </li>\n\n    <div class=\"topbar-divider d-none d-sm-block\"></div>\n\n    <!-- Nav Item - User Information -->\n    <li class=\"nav-item dropdown no-arrow\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"\n         data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n        <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Valerie Luna</span>\n        <img class=\"img-profile rounded-circle\" src=\"https://source.unsplash.com/QAB-WJcbgJk/60x60\">\n      </a>\n      <!-- Dropdown - User Information -->\n      <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n           aria-labelledby=\"userDropdown\">\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Profile\n        </a>\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Settings\n        </a>\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Activity Log\n        </a>\n        <div class=\"dropdown-divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">\n          <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Logout\n        </a>\n      </div>\n    </li>\n\n  </ul>\n\n</nav>\n<!-- End of Topbar -->\n"
+
+/***/ }),
+
+/***/ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/profile-admin/admin-topbar/admin-topbar.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: AdminTopbarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminTopbarComponent", function() { return AdminTopbarComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AdminTopbarComponent = /** @class */ (function () {
+    function AdminTopbarComponent() {
+    }
+    AdminTopbarComponent.prototype.ngOnInit = function () {
+    };
+    AdminTopbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-admin-topbar',
+            template: __webpack_require__(/*! ./admin-topbar.component.html */ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.html"),
+            styles: [__webpack_require__(/*! ./admin-topbar.component.css */ "./src/app/components/profile-admin/admin-topbar/admin-topbar.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AdminTopbarComponent);
+    return AdminTopbarComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/profile-admin/profile-admin.component.css":
 /*!**********************************************************************!*\
   !*** ./src/app/components/profile-admin/profile-admin.component.css ***!
@@ -604,7 +793,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"page-top\">\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n    <!--<app-admin-sidebar></app-admin-sidebar>-->\n    <!-- Sidebar -->\n    <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n        <!-- Sidebar - Brand -->\n        <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/\">\n            <div class=\"sidebar-brand-icon rotate-n-15\">\n                <i class=\"fas fa-laugh-wink\"></i>\n            </div>\n            <div class=\"sidebar-brand-text mx-3\">菊花航空</div>\n        </a>\n\n        <!-- Divider -->\n        <hr class=\"sidebar-divider my-0\">\n\n        <!-- Nav Item - Dashboard -->\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" href=\"/admin\">\n                <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n                <span>Dashboard</span></a>\n        </li>\n\n        <!-- Divider -->\n        <hr class=\"sidebar-divider\">\n\n        <!-- Heading -->\n        <div class=\"sidebar-heading\">\n            Components\n        </div>\n\n        <!-- Nav Item - user management Collapse Menu -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseTwo\"\n               aria-expanded=\"true\" aria-controls=\"collapseTwo\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>User Management</span>\n            </a>\n            <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <h6 class=\"collapse-header\">Other user options:</h6>\n                    <a class=\"collapse-item\" href=\"buttons.html\">Buttons</a>\n                    <a class=\"collapse-item\" href=\"cards.html\">Cards</a>\n                </div>\n            </div>\n        </li>\n\n        <!-- Nav Item - airport Collapse Menu -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseUtilities\"\n               aria-expanded=\"true\" aria-controls=\"collapseUtilities\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>Airport Management</span>\n            </a>\n            <div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\"\n                 data-parent=\"#accordionSidebar\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <h6 class=\"collapse-header\">Other airport options:</h6>\n                    <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>\n                    <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>\n                    <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>\n                    <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>\n                </div>\n            </div>\n        </li>\n\n        <!-- Nav Item - flight Collapse Menu -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseFlights\"\n               aria-expanded=\"true\" aria-controls=\"collapseFlights\">\n                <i class=\"fas fa-fw fa-cog\"></i>\n                <span>Flight Management</span>\n            </a>\n            <div id=\"collapseFlights\" class=\"collapse\" aria-labelledby=\"headingUtilities\"\n                 data-parent=\"#accordionSidebar\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <h6 class=\"collapse-header\">Other airport options:</h6>\n                    <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>\n                    <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>\n                    <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>\n                    <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>\n                </div>\n            </div>\n        </li>\n\n        <!-- Divider -->\n        <hr class=\"sidebar-divider\">\n\n        <!-- Heading -->\n        <div class=\"sidebar-heading\">\n            Pages\n        </div>\n\n        <!-- Nav Item - Pages Collapse Menu -->\n        <li class=\"nav-item\">\n            <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapsePages\"\n               aria-expanded=\"true\" aria-controls=\"collapsePages\">\n                <i class=\"fas fa-fw fa-folder\"></i>\n                <span>Pages</span>\n            </a>\n            <div id=\"collapsePages\" class=\"collapse\" aria-labelledby=\"headingPages\" data-parent=\"#accordionSidebar\">\n                <div class=\"bg-white py-2 collapse-inner rounded\">\n                    <h6 class=\"collapse-header\">Login Screens:</h6>\n                    <a class=\"collapse-item\" href=\"login.html\">Login</a>\n                    <a class=\"collapse-item\" href=\"register.html\">Register</a>\n                    <a class=\"collapse-item\" href=\"forgot-password.html\">Forgot Password</a>\n                    <div class=\"collapse-divider\"></div>\n                    <h6 class=\"collapse-header\">Other Pages:</h6>\n                    <a class=\"collapse-item\" href=\"404.html\">404 Page</a>\n                    <a class=\"collapse-item\" href=\"blank.html\">Blank Page</a>\n                </div>\n            </div>\n        </li>\n\n        <!-- Divider -->\n        <hr class=\"sidebar-divider d-none d-md-block\">\n\n        <!-- Sidebar Toggler (Sidebar) -->\n        <div class=\"text-center d-none d-md-inline\">\n            <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n        </div>\n\n    </ul>\n    <!-- End of Sidebar -->\n\n\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n        <!-- Main Content -->\n        <div id=\"content\">\n\n            <!-- Topbar -->\n            <nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n\n                <!-- Sidebar Toggle (Topbar) -->\n                <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n                    <i class=\"fa fa-bars\"></i>\n                </button>\n\n                <!-- Topbar Navbar -->\n                <ul class=\"navbar-nav ml-auto\">\n\n                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n                    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\"\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-search fa-fw\"></i>\n                        </a>\n                        <!-- Dropdown - Messages -->\n                        <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\"\n                             aria-labelledby=\"searchDropdown\">\n                            <form class=\"form-inline mr-auto w-100 navbar-search\">\n                                <div class=\"input-group\">\n                                    <input type=\"text\" class=\"form-control bg-light border-0 small\"\n                                           placeholder=\"Search for...\" aria-label=\"Search\"\n                                           aria-describedby=\"basic-addon2\">\n                                    <div class=\"input-group-append\">\n                                        <button class=\"btn btn-primary\" type=\"button\">\n                                            <i class=\"fas fa-search fa-sm\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </form>\n                        </div>\n                    </li>\n\n                    <!-- Nav Item - Alerts -->\n                    <li class=\"nav-item dropdown no-arrow mx-1\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\"\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-bell fa-fw\"></i>\n                            <!-- Counter - Alerts -->\n                            <span class=\"badge badge-danger badge-counter\">3+</span>\n                        </a>\n                        <!-- Dropdown - Alerts -->\n                        <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n                             aria-labelledby=\"alertsDropdown\">\n                            <h6 class=\"dropdown-header\">\n                                Alerts Center\n                            </h6>\n                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n                                <div class=\"mr-3\">\n                                    <div class=\"icon-circle bg-primary\">\n                                        <i class=\"fas fa-file-alt text-white\"></i>\n                                    </div>\n                                </div>\n                                <div>\n                                    <div class=\"small text-gray-500\">December 12, 2019</div>\n                                    <span class=\"font-weight-bold\">A new monthly report is ready to download!</span>\n                                </div>\n                            </a>\n                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n                                <div class=\"mr-3\">\n                                    <div class=\"icon-circle bg-success\">\n                                        <i class=\"fas fa-donate text-white\"></i>\n                                    </div>\n                                </div>\n                                <div>\n                                    <div class=\"small text-gray-500\">December 7, 2019</div>\n                                    $290.29 has been deposited into your account!\n                                </div>\n                            </a>\n                            <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Show All Alerts</a>\n                        </div>\n                    </li>\n\n                    <!-- Nav Item - Messages -->\n                    <li class=\"nav-item dropdown no-arrow mx-1\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"messagesDropdown\" role=\"button\"\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"fas fa-envelope fa-fw\"></i>\n                            <!-- Counter - Messages -->\n                            <span class=\"badge badge-danger badge-counter\">7</span>\n                        </a>\n                        <!-- Dropdown - Messages -->\n                        <div class=\"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n                             aria-labelledby=\"messagesDropdown\">\n                            <h6 class=\"dropdown-header\">\n                                Message Center\n                            </h6>\n                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n                                <div class=\"dropdown-list-image mr-3\">\n                                    <img class=\"rounded-circle\" src=\"https://source.unsplash.com/fn_BT9fwg_E/60x60\"\n                                         alt=\"\">\n                                    <div class=\"status-indicator bg-success\"></div>\n                                </div>\n                                <div class=\"font-weight-bold\">\n                                    <div class=\"text-truncate\">Hi there! I am wondering if you can help me with a\n                                        problem I've been having.\n                                    </div>\n                                    <div class=\"small text-gray-500\">Emily Fowler · 58m</div>\n                                </div>\n                            </a>\n                            <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">\n                                <div class=\"dropdown-list-image mr-3\">\n                                    <img class=\"rounded-circle\" src=\"https://source.unsplash.com/AU4VPcFN4LE/60x60\"\n                                         alt=\"\">\n                                    <div class=\"status-indicator\"></div>\n                                </div>\n                                <div>\n                                    <div class=\"text-truncate\">I have the photos that you ordered last month, how would\n                                        you like them sent to you?\n                                    </div>\n                                    <div class=\"small text-gray-500\">Jae Chun · 1d</div>\n                                </div>\n                            </a>\n                            <a class=\"dropdown-item text-center small text-gray-500\" href=\"#\">Read More Messages</a>\n                        </div>\n                    </li>\n\n                    <div class=\"topbar-divider d-none d-sm-block\"></div>\n\n                    <!-- Nav Item - User Information -->\n                    <li class=\"nav-item dropdown no-arrow\">\n                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"\n                           data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Valerie Luna</span>\n                            <img class=\"img-profile rounded-circle\" src=\"https://source.unsplash.com/QAB-WJcbgJk/60x60\">\n                        </a>\n                        <!-- Dropdown - User Information -->\n                        <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\"\n                             aria-labelledby=\"userDropdown\">\n                            <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                Profile\n                            </a>\n                            <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                Settings\n                            </a>\n                            <a class=\"dropdown-item\" href=\"#\">\n                                <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                Activity Log\n                            </a>\n                            <div class=\"dropdown-divider\"></div>\n                            <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">\n                                <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n                                Logout\n                            </a>\n                        </div>\n                    </li>\n\n                </ul>\n\n            </nav>\n            <!-- End of Topbar -->\n\n            <!-- Begin Page Content -->\n            <div class=\"container-fluid\">\n\n                <!-- Page Heading -->\n                <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                    <h1 class=\"h3 mb-0 text-gray-800\">Dashboard</h1>\n                </div>\n\n                <!-- Content Row -->\n                <div class=\"row\">\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Earnings\n                                            (Monthly)\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$40,000</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-success shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">Earnings\n                                            (Annual)\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$215,000</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-dollar-sign fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-info shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Tasks</div>\n                                        <div class=\"row no-gutters align-items-center\">\n                                            <div class=\"col-auto\">\n                                                <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">50%</div>\n                                            </div>\n                                            <div class=\"col\">\n                                                <div class=\"progress progress-sm mr-2\">\n                                                    <div class=\"progress-bar bg-info\" role=\"progressbar\"\n                                                         style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\"\n                                                         aria-valuemax=\"100\"></div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Pending Requests Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-warning shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Pending\n                                            Requests\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">18</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-comments fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n\n            </div>\n            <!-- End of container-fluid -->\n        </div>\n        <!-- End of Main Content -->\n\n        <!-- Footer -->\n        <footer class=\"sticky-footer bg-white\">\n            <div class=\"container my-auto\">\n                <div class=\"copyright text-center my-auto\">\n                    <span>Copyright &copy; 菊花航空 2019</span>\n                </div>\n            </div>\n        </footer>\n        <!-- End of Footer -->\n\n    </div>\n    <!-- End of Content Wrapper -->\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n    <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n     aria-hidden=\"true\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n                <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n                    <span aria-hidden=\"true\">×</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n            <div class=\"modal-footer\">\n                <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n                <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n            </div>\n        </div>\n    </div>\n</div>\n</body>\n\n"
+module.exports = "<body id=\"page-top\">\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n    <app-admin-sidebar></app-admin-sidebar>\n\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n        <!-- Main Content -->\n        <div id=\"content\">\n\n            <app-admin-topbar></app-admin-topbar>\n\n            <!-- Begin Page Content -->\n            <div class=\"container-fluid\">\n\n                <!-- Page Heading -->\n                <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                    <h1 class=\"h3 mb-0 text-gray-800\">Dashboard</h1>\n                </div>\n\n                <!-- Content Row -->\n                <div class=\"row\">\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-primary shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Earnings\n                                            (Monthly)\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$40,000</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-success shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">Earnings\n                                            (Annual)\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$215,000</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-dollar-sign fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Earnings (Monthly) Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-info shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Tasks</div>\n                                        <div class=\"row no-gutters align-items-center\">\n                                            <div class=\"col-auto\">\n                                                <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">50%</div>\n                                            </div>\n                                            <div class=\"col\">\n                                                <div class=\"progress progress-sm mr-2\">\n                                                    <div class=\"progress-bar bg-info\" role=\"progressbar\"\n                                                         style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\"\n                                                         aria-valuemax=\"100\"></div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- Pending Requests Card Example -->\n                    <div class=\"col-xl-3 col-md-6 mb-4\">\n                        <div class=\"card border-left-warning shadow h-100 py-2\">\n                            <div class=\"card-body\">\n                                <div class=\"row no-gutters align-items-center\">\n                                    <div class=\"col mr-2\">\n                                        <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Pending\n                                            Requests\n                                        </div>\n                                        <div class=\"h5 mb-0 font-weight-bold text-gray-800\">18</div>\n                                    </div>\n                                    <div class=\"col-auto\">\n                                        <i class=\"fas fa-comments fa-2x text-gray-300\"></i>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n\n            </div>\n            <!-- End of container-fluid -->\n        </div>\n        <!-- End of Main Content -->\n\n        <!-- Footer -->\n        <footer class=\"sticky-footer bg-white\">\n            <div class=\"container my-auto\">\n                <div class=\"copyright text-center my-auto\">\n                    <span>Copyright &copy; 菊花航空 2019</span>\n                </div>\n            </div>\n        </footer>\n        <!-- End of Footer -->\n\n    </div>\n    <!-- End of Content Wrapper -->\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n    <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n     aria-hidden=\"true\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n                <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n                    <span aria-hidden=\"true\">×</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n            <div class=\"modal-footer\">\n                <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n                <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n            </div>\n        </div>\n    </div>\n</div>\n</body>\n\n"
 
 /***/ }),
 
@@ -796,56 +985,102 @@ var RegisterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/route-management/route-management.component.css":
-/*!****************************************************************************!*\
-  !*** ./src/app/components/route-management/route-management.component.css ***!
-  \****************************************************************************/
+/***/ "./src/app/components/user-management/user-management.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/user-management/user-management.component.css ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcm91dGUtbWFuYWdlbWVudC9yb3V0ZS1tYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1tYW5hZ2VtZW50L3VzZXItbWFuYWdlbWVudC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
-/***/ "./src/app/components/route-management/route-management.component.html":
-/*!*****************************************************************************!*\
-  !*** ./src/app/components/route-management/route-management.component.html ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  route-management works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/route-management/route-management.component.ts":
+/***/ "./src/app/components/user-management/user-management.component.html":
 /*!***************************************************************************!*\
-  !*** ./src/app/components/route-management/route-management.component.ts ***!
+  !*** ./src/app/components/user-management/user-management.component.html ***!
   \***************************************************************************/
-/*! exports provided: RouteManagementComponent */
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- DataTales Example -->\n        <div class=\"card shadow mb-4\">\n          <div class=\"card-header py-3\">\n            <h6 class=\"m-0 font-weight-bold text-primary\">All Users</h6>\n          </div>\n          <div class=\"card-body\">\n            <div class=\"table-responsive\">\n              <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\"\n                     class=\"table table-bordered\"\n                     id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n                <thead>\n                <tr>\n                  <th>Id</th>\n                  <th>Name</th>\n                  <th>Username</th>\n                  <th>Email</th>\n                  <th>Role</th>\n                  <th>Options</th>\n                </tr>\n                </thead>\n\n                <tbody>\n                <tr *ngFor=\"let user of users\">\n                  <td>{{user._id}}</td>\n                  <td>{{user.firstName}} {{user.lastName}}</td>\n                  <td>{{user.username}}</td>\n                  <td>{{user.email}}</td>\n                  <td>{{user.role}}</td>\n                  <td><button class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\">Delete</button></td>\n                </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <!-- Footer -->\n    <footer class=\"sticky-footer bg-white\">\n      <div class=\"container my-auto\">\n        <div class=\"copyright text-center my-auto\">\n          <span>Copyright &copy; Your Website 2019</span>\n        </div>\n      </div>\n    </footer>\n    <!-- End of Footer -->\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n        <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n</body>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/user-management/user-management.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/user-management/user-management.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: UserManagementComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouteManagementComponent", function() { return RouteManagementComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserManagementComponent", function() { return UserManagementComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/user.service */ "./src/app/service/user.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-datatables */ "./node_modules/angular-datatables/index.js");
 
 
-var RouteManagementComponent = /** @class */ (function () {
-    function RouteManagementComponent() {
+
+
+
+
+var UserManagementComponent = /** @class */ (function () {
+    function UserManagementComponent(activatedRoute, router, userService) {
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.userService = userService;
+        this.dtOptions = {};
+        this.dtTrigger = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
     }
-    RouteManagementComponent.prototype.ngOnInit = function () {
+    UserManagementComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.findAllUsers().subscribe(function (users) {
+            _this.users = users;
+        });
     };
-    RouteManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    UserManagementComponent.prototype.ngAfterViewInit = function () {
+        this.dtTrigger.next();
+    };
+    UserManagementComponent.prototype.ngOnDestroy = function () {
+        // Do not forget to unsubscribe the event
+        this.dtTrigger.unsubscribe();
+    };
+    UserManagementComponent.prototype.deleteUser = function (userId) {
+        var _this = this;
+        this.userService.deleteUser(userId).subscribe(function () { return _this.refresh(); });
+    };
+    UserManagementComponent.prototype.refresh = function () {
+        this.router.navigate(['/admin/user-management']);
+    };
+    UserManagementComponent.prototype.rerender = function () {
+        var _this = this;
+        this.datatableElement.dtInstance.then(function (dtInstance) {
+            // Destroy the table first
+            dtInstance.destroy();
+            // Call the dtTrigger to rerender again
+            _this.dtTrigger.next();
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(angular_datatables__WEBPACK_IMPORTED_MODULE_5__["DataTableDirective"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", angular_datatables__WEBPACK_IMPORTED_MODULE_5__["DataTableDirective"])
+    ], UserManagementComponent.prototype, "datatableElement", void 0);
+    UserManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-route-management',
-            template: __webpack_require__(/*! ./route-management.component.html */ "./src/app/components/route-management/route-management.component.html"),
-            styles: [__webpack_require__(/*! ./route-management.component.css */ "./src/app/components/route-management/route-management.component.css")]
+            selector: 'app-user-management',
+            template: __webpack_require__(/*! ./user-management.component.html */ "./src/app/components/user-management/user-management.component.html"),
+            styles: [__webpack_require__(/*! ./user-management.component.css */ "./src/app/components/user-management/user-management.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], RouteManagementComponent);
-    return RouteManagementComponent;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _service_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
+    ], UserManagementComponent);
+    return UserManagementComponent;
 }());
 
 
@@ -1074,6 +1309,10 @@ var UserService = /** @class */ (function () {
         this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl;
         this.userApiUrl = '/api/user';
     }
+    UserService.prototype.findAllUsers = function () {
+        console.log('front user service findAllUsers() called');
+        return this.http.get(this.baseUrl + this.userApiUrl + '/all');
+    };
     UserService.prototype.findUserById = function (userId) {
         console.log('front user service findUserById() called');
         // Only need to call server's url to get the data.

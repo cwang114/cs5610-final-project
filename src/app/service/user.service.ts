@@ -20,6 +20,11 @@ export class UserService {
   baseUrl = environment.baseUrl;
   userApiUrl = '/api/user';
 
+  findAllUsers() {
+    console.log('front user service findAllUsers() called');
+    return this.http.get<User[]>(this.baseUrl + this.userApiUrl + '/all');
+  }
+
   findUserById(userId): Observable<User> {
     console.log('front user service findUserById() called');
     // Only need to call server's url to get the data.

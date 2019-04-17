@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouteManagementComponent } from './components/route-management/route-management.component';
 import { FootbarComponent } from './components/footbar/footbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -18,11 +17,15 @@ import { HeaderbarComponent } from './components/headerbar/headerbar.component';
 import {AuthGuardService} from './service/auth-guard.service';
 import {AuthenticationService} from './service/authentication.service';
 import { AdminSidebarComponent } from './components/profile-admin/admin-sidebar/admin-sidebar.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
+import { AirportManagementComponent } from './components/airport-management/airport-management.component';
+import { FlightManagementComponent } from './components/flight-management/flight-management.component';
+import { AdminTopbarComponent } from './components/profile-admin/admin-topbar/admin-topbar.component';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RouteManagementComponent,
     FootbarComponent,
     LoginComponent,
     RegisterComponent,
@@ -31,6 +34,10 @@ import { AdminSidebarComponent } from './components/profile-admin/admin-sidebar/
     MainComponent,
     HeaderbarComponent,
     AdminSidebarComponent,
+    UserManagementComponent,
+    AirportManagementComponent,
+    FlightManagementComponent,
+    AdminTopbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,7 @@ import { AdminSidebarComponent } from './components/profile-admin/admin-sidebar/
     RouterModule,
     FormsModule,
     HttpClientModule,
+    DataTablesModule
   ],
   providers: [UserService, AuthGuardService, AuthenticationService],
   bootstrap: [AppComponent]
