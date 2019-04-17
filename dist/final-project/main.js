@@ -1003,7 +1003,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- DataTales Example -->\n        <div class=\"card shadow mb-4\">\n          <div class=\"card-header py-3\">\n            <h6 class=\"m-0 font-weight-bold text-primary\">All Users</h6>\n          </div>\n          <div class=\"card-body\">\n            <div class=\"table-responsive\">\n              <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\"\n                     class=\"table table-bordered\"\n                     id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n                <thead>\n                <tr>\n                  <th>Id</th>\n                  <th>Name</th>\n                  <th>Username</th>\n                  <th>Email</th>\n                  <th>Role</th>\n                  <th>Options</th>\n                </tr>\n                </thead>\n\n                <tbody>\n                <tr *ngFor=\"let user of users\">\n                  <td>{{user._id}}</td>\n                  <td>{{user.firstName}} {{user.lastName}}</td>\n                  <td>{{user.username}}</td>\n                  <td>{{user.email}}</td>\n                  <td>{{user.role}}</td>\n                  <td><button class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\">Delete</button></td>\n                </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <!-- Footer -->\n    <footer class=\"sticky-footer bg-white\">\n      <div class=\"container my-auto\">\n        <div class=\"copyright text-center my-auto\">\n          <span>Copyright &copy; Your Website 2019</span>\n        </div>\n      </div>\n    </footer>\n    <!-- End of Footer -->\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n        <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n</body>\n"
+module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- DataTales Example -->\n        <div class=\"card shadow mb-4\">\n          <div class=\"card-header py-3\">\n            <h6 class=\"m-0 font-weight-bold text-primary\">All Users</h6>\n          </div>\n          <div class=\"card-body\">\n            <div class=\"table-responsive\">\n              <table datatable [dtOptions]=\"dtOptions\" [dtTrigger]=\"dtTrigger\"\n                     id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n                <thead>\n                <tr>\n                  <th>Id</th>\n                  <th>Name</th>\n                  <th>Username</th>\n                  <th>Email</th>\n                  <th>Role</th>\n                  <th>Options</th>\n                </tr>\n                </thead>\n\n                <tbody>\n                <tr *ngFor=\"let user of users\">\n                  <td>{{user._id}}</td>\n                  <td>{{user.firstName}} {{user.lastName}}</td>\n                  <td>{{user.username}}</td>\n                  <td>{{user.email}}</td>\n                  <td>{{user.role}}</td>\n                  <td><button class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\">Delete</button></td>\n                </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <!-- Footer -->\n    <footer class=\"sticky-footer bg-white\">\n      <div class=\"container my-auto\">\n        <div class=\"copyright text-center my-auto\">\n          <span>Copyright &copy; Your Website 2019</span>\n        </div>\n      </div>\n    </footer>\n    <!-- End of Footer -->\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<!-- Logout Modal-->\n<div class=\"modal fade\" id=\"logoutModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">Ready to Leave?</h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">Select \"Logout\" below if you are ready to end your current session.</div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" data-dismiss=\"modal\">Cancel</button>\n        <a class=\"btn btn-primary\" href=\"login.html\">Logout</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n</body>\n"
 
 /***/ }),
 
@@ -1041,10 +1041,8 @@ var UserManagementComponent = /** @class */ (function () {
         var _this = this;
         this.userService.findAllUsers().subscribe(function (users) {
             _this.users = users;
+            _this.dtTrigger.next();
         });
-    };
-    UserManagementComponent.prototype.ngAfterViewInit = function () {
-        this.dtTrigger.next();
     };
     UserManagementComponent.prototype.ngOnDestroy = function () {
         // Do not forget to unsubscribe the event
@@ -1052,18 +1050,20 @@ var UserManagementComponent = /** @class */ (function () {
     };
     UserManagementComponent.prototype.deleteUser = function (userId) {
         var _this = this;
-        this.userService.deleteUser(userId).subscribe(function () { return _this.refresh(); });
+        this.userService.deleteUser(userId).subscribe(function () { return _this.rerender(); });
     };
     UserManagementComponent.prototype.refresh = function () {
         this.router.navigate(['/admin/user-management']);
     };
     UserManagementComponent.prototype.rerender = function () {
-        var _this = this;
+        // this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        //   // Destroy the table first
+        //   dtInstance.destroy();
+        //   // Call the dtTrigger to rerender again
+        //   this.dtTrigger.next();
+        // });
         this.datatableElement.dtInstance.then(function (dtInstance) {
-            // Destroy the table first
-            dtInstance.destroy();
-            // Call the dtTrigger to rerender again
-            _this.dtTrigger.next();
+            dtInstance.draw();
         });
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

@@ -10,7 +10,7 @@ import {DataTableDirective} from 'angular-datatables';
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.css']
 })
-export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit {
+export class UserManagementComponent implements OnDestroy, OnInit {
   @ViewChild(DataTableDirective)
   datatableElement: DataTableDirective;
   users: User[];
@@ -27,11 +27,10 @@ export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit
     this.userService.findAllUsers().subscribe(
         users => {
           this.users = users;
+          this.dtTrigger.next();
         });
   }
-  ngAfterViewInit(): void {
-    this.dtTrigger.next();
-  }
+
 
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
@@ -40,7 +39,7 @@ export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit
 
   deleteUser(userId) {
     this.userService.deleteUser(userId).subscribe(
-        () => this.refresh()
+        () => this.rerender()
     );
   }
 
@@ -48,11 +47,14 @@ export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit
     this.router.navigate(['/admin/user-management']);
   }
   rerender(): void {
+    // this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
+    //   // Destroy the table first
+    //   dtInstance.destroy();
+    //   // Call the dtTrigger to rerender again
+    //   this.dtTrigger.next();
+    // });
     this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      // Destroy the table first
-      dtInstance.destroy();
-      // Call the dtTrigger to rerender again
-      this.dtTrigger.next();
+      dtInstance.draw();
     });
   }
 

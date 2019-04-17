@@ -29,7 +29,7 @@
               "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.slim.js",
+              "node_modules/jquery/dist/jquery.js",
               "node_modules/datatables.net/js/jquery.dataTables.js"],
             "es5BrowserSupport": true
           },
