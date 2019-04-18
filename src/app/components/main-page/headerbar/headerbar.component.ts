@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, NgZone, OnInit, Output} from '@angular/core';
-import {User} from '../../model/User';
+import {User} from '../../../model/User';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../../service/authentication.service';
-import {Role} from '../../model/Role';
+import {AuthenticationService} from '../../../service/authentication.service';
+import {Role} from '../../../model/Role';
 
 @Component({
     selector: 'app-headerbar',

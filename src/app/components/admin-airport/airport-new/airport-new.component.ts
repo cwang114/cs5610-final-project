@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {AirportService} from '../service/airport.service';
-import {Airport} from '../model/Airport';
+import {AirportService} from '../../../service/airport.service';
+import {Airport} from '../../../model/Airport';
 
 @Component({
   selector: 'app-airport-new',

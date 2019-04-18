@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {AuthenticationService} from '../../service/authentication.service';
+import {AuthenticationService} from '../../../service/authentication.service';
 
 @Component({
     selector: 'app-login',

@@ -1,7 +1,7 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {Airport} from '../../model/Airport';
+import {Airport} from '../../../model/Airport';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AirportService} from '../../service/airport.service';
+import {AirportService} from '../../../service/airport.service';
 import 'datatables.net';
 @Component({
   selector: 'app-airport-management',
@@ -62,6 +62,9 @@ export class AirportManagementComponent implements AfterViewInit, OnDestroy, OnI
 
   createAirport() {
     this.router.navigate(['admin', 'airport-new']);
+  }
+  updateAirport(airportId) {
+      this.router.navigate(['admin', 'airport-update', airportId]);
   }
   deleteAirport(airportId) {
     this.airportService.deleteAirport(airportId).subscribe(

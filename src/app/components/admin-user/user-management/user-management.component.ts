@@ -1,7 +1,7 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {User} from '../../model/User';
+import {User} from '../../../model/User';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UserService} from '../../service/user.service';
+import {UserService} from '../../../service/user.service';
 import 'datatables.net';
 
 @Component({

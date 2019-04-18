@@ -4,11 +4,11 @@ var airportModel = mongoose.model('Airport', airportSchema);
 
 // airportService at server side will call this function
 airportModel.createAirport = createAirport;
-airportModel.findAirportByAirportById = findAirportById;
-airportModel.findAirportByAirportCode = findAirportByAirportCode;
-airportModel.findAirportByAirportName = findAirportByAirportName;
-airportModel.findAirportByCityName = findAirportByCityName;
-airportModel.findAirportByCityCode = findAirportByCityCode;
+airportModel.findAirportById = findAirportById;
+airportModel.findByAirportCode = findByAirportCode;
+airportModel.findByAirportName = findByAirportName;
+airportModel.findByCityName = findByCityName;
+airportModel.findByCityCode = findByCityCode;
 airportModel.updateAirport = updateAirport;
 airportModel.deleteAirport = deleteAirport;
 
@@ -24,22 +24,22 @@ function findAirportById(airportId) {
     console.log('Mongoose: findAirportById() called: ' + airportId);
     return airportModel.findById(airportId);
 }
-function findAirportByAirportCode(airportCode) {
+function findByAirportCode(airportCode) {
     console.log('Mongoose: findAirportByAirportCode() called: ' + airportCode);
     return airportModel.findOne({airportCode: airportCode});
 }
 
-function findAirportByAirportName(airportName) {
+function findByAirportName(airportName) {
     console.log('Mongoose: findAirportByAirportName() called' + airportName);
     return airportModel.findOne({airportName: airportName});
 }
 
-function findAirportByCityCode(cityCode) {
+function findByCityCode(cityCode) {
     console.log('Mongoose: findAirportByCityCode() called: ' + cityCode);
     return airportModel.find({cityCode: cityCode});
 }
 
-function findAirportByCityName(cityName) {
+function findByCityName(cityName) {
     console.log('Mongoose: findAirportByCityName() called' + cityName);
     return airportModel.find({cityName: cityName});
 }
