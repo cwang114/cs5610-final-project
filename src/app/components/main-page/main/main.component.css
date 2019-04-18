@@ -432,3 +432,9 @@ svg:not(:root)
     width: auto
 }
 
+#flight-searching-banner {
+    /*background-image: url('../../../../assets/background.jpg');*/
+    background-size: cover;
+    background-position: center;
+}
+

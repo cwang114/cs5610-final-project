@@ -27,6 +27,8 @@ import {AirportService} from './service/airport.service';
 import { AdminFooterComponent } from './components/profile-admin/admin-footer/admin-footer.component';
 import { AdminLogoutComponent } from './components/profile-admin/admin-logout/admin-logout.component';
 import { AirportUpdateComponent } from './components/admin-airport/airport-update/airport-update.component';
+import { UserUpdateComponent } from './components/admin-user/user-update/user-update.component';
+import { FlightSearchComponent } from './components/flight-search/flight-search.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AirportUpdateComponent } from './components/admin-airport/airport-updat
     AdminFooterComponent,
     AdminLogoutComponent,
     AirportUpdateComponent,
+    UserUpdateComponent,
+    FlightSearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,8 @@
                   <th>Username</th>
                   <th>Email</th>
                   <th>Role</th>
-                  <th>Options</th>
+                  <th>Update</th>
+                  <th>Delete</th>
                 </tr>
                 </thead>
 
@@ -42,6 +43,7 @@
                   <td>{{user.username}}</td>
                   <td>{{user.email}}</td>
                   <td>{{user.role}}</td>
+                  <td><button class="btn btn-primary" (click)="updateUser(user._id)">Update</button></td>
                   <td><button class="btn btn-danger" (click)="deleteUser(user._id)">Delete</button></td>
                 </tr>
                 </tbody>

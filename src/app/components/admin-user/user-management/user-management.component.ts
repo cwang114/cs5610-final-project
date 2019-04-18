@@ -62,6 +62,10 @@ export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit
     }
   }
 
+  updateUser(userId) {
+      this.router.navigate(['admin', 'user-update', userId]);
+
+  }
   deleteUser(userId) {
     this.userService.deleteUser(userId).subscribe(
         () => {

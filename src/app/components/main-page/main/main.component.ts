@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {User} from '../../../model/User';
 import {UserService} from '../../../service/user.service';
 import {AuthenticationService} from '../../../service/authentication.service';
@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements AfterViewInit, OnInit {
 
   currentUserObservable: Observable<User>;
   currentUser: User;
@@ -24,6 +24,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     console.log('called main ngOnInit');
+  }
+
+  ngAfterViewInit(): void {
     if (this.currentUser !== null) {
       this.userService.findUserById(this.currentUser._id).pipe(first()).subscribe(user => {
         this.userFromApi = user;
