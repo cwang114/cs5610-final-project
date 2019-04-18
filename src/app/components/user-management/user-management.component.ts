@@ -1,61 +1,78 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {User} from '../../model/User';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../service/user.service';
-import { Subject } from 'rxjs';
-import {DataTableDirective} from 'angular-datatables';
+import 'datatables.net';
 
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.css']
 })
-export class UserManagementComponent implements OnDestroy, OnInit {
-  @ViewChild(DataTableDirective)
-  datatableElement: DataTableDirective;
+export class UserManagementComponent implements AfterViewInit, OnDestroy, OnInit {
+
   users: User[];
+  dataTable: any;
 
-
-  dtOptions: DataTables.Settings = {};
-  dtTrigger = new Subject();
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private userService: UserService) { }
+              private userService: UserService,
+              private chRef: ChangeDetectorRef) { }
 
 
   ngOnInit() {
+    console.log('on init called');
+  }
+  ngAfterViewInit() {
+    console.log('after view init called');
     this.userService.findAllUsers().subscribe(
         users => {
           this.users = users;
-          this.dtTrigger.next();
+
+          // You'll have to wait that changeDetection occurs and projects data into
+          // the HTML template, you can ask Angular to that for you ;-)
+          this.chRef.detectChanges();
+
+          this.initDatatable();
         });
   }
 
-
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
+    this.destroyDataTable();
+  }
+
+  private initDatatable(): void {
+    // Now you can use jQuery DataTables :
+    const table: any = $('table');
+    this.dataTable = table.DataTable({
+      select: true
+    });
+  }
+
+  private reInitDatatable(): void {
+    this.destroyDataTable();
+    setTimeout(() => this.initDatatable(), 0);
+  }
+
+  private destroyDataTable(): void {
+    if (this.dataTable) {
+      this.dataTable.destroy();
+      this.dataTable = null;
+    }
   }
 
   deleteUser(userId) {
     this.userService.deleteUser(userId).subscribe(
-        () => this.rerender()
+        () => {
+          this.userService.findAllUsers().subscribe(
+              users => {
+                this.users = users;
+                this.reInitDatatable();
+              }
+          );
+        }
     );
-  }
-
-  refresh() {
-    this.router.navigate(['/admin/user-management']);
-  }
-  rerender(): void {
-    // this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-    //   // Destroy the table first
-    //   dtInstance.destroy();
-    //   // Call the dtTrigger to rerender again
-    //   this.dtTrigger.next();
-    // });
-    this.datatableElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.draw();
-    });
   }
 
 }

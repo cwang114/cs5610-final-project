@@ -1,0 +1,97 @@
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <app-admin-topbar></app-admin-topbar>
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <form #f="ngForm">
+          <div class="form-group">
+            <label for="airportCode" class="font-weight-bold">Airport Code</label>
+            <input id="airportCode"
+                   name="airportCode"
+                   type="text"
+                   class="form-control"
+                   placeholder="Airport Code"
+                   ngModel
+                   required
+                   #airportCode="ngModel">
+          </div> <!-- form-group// -->
+
+          <div class="form-group">
+          <label for="airportName" class="font-weight-bold">Airport Name</label>
+          <input id="airportName"
+                 name="airportName"
+                 type="text"
+                 class="form-control"
+                 placeholder="Airport Name"
+                 ngModel
+                 required
+                 #airportName="ngModel">
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <label for="cityCode" class="font-weight-bold">City Code</label>
+            <input id="cityCode"
+                   name="cityCode"
+                   type="text"
+                   class="form-control"
+                   placeholder="City Code"
+                   ngModel
+                   required
+                   #cityCode="ngModel">
+          </div> <!-- form-group// -->
+
+          <div class="form-group">
+            <label for="cityName" class="font-weight-bold">City Name</label>
+            <input id="cityName"
+                   name="cityName"
+                   type="text"
+                   class="form-control"
+                   placeholder="City Name"
+                   ngModel
+                   required
+                   #cityName="ngModel">
+          </div> <!-- form-group// -->
+          <button class="btn btn-success btn-block" (click)="saveAirport()">Create New Airport</button>
+        </form>
+
+
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <app-admin-footer></app-admin-footer>
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<app-admin-logout></app-admin-logout>
+
+</body>
+
+
+<!--main body-->
+<div class="container-fluid pt-2">
+
+</div>
+

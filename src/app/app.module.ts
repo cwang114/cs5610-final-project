@@ -22,6 +22,10 @@ import { AirportManagementComponent } from './components/airport-management/airp
 import { FlightManagementComponent } from './components/flight-management/flight-management.component';
 import { AdminTopbarComponent } from './components/profile-admin/admin-topbar/admin-topbar.component';
 import {DataTablesModule} from 'angular-datatables';
+import { AirportNewComponent } from './airport-new/airport-new.component';
+import {AirportService} from './service/airport.service';
+import { AdminFooterComponent } from './admin-footer/admin-footer.component';
+import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import {DataTablesModule} from 'angular-datatables';
     AirportManagementComponent,
     FlightManagementComponent,
     AdminTopbarComponent,
+    AirportNewComponent,
+    AdminFooterComponent,
+    AdminLogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,7 @@ import {DataTablesModule} from 'angular-datatables';
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [UserService, AuthGuardService, AuthenticationService],
+  providers: [UserService, AuthGuardService, AuthenticationService, AirportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
