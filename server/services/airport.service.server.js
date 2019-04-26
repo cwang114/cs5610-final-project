@@ -4,6 +4,7 @@ module.exports = function (app) {
 
     app.post('/api/airport', createAirport);
     app.get('/api/airport/:airportId', findAirportById);
+    app.get('/api/airport/airport-code/:airportCode', findAirportByCode);
     app.put('/api/airport/:airportId', updateAirport);
     app.delete('/api/airport/:airportId', deleteAirport);
     app.get('/api/find/airport/all', findAllAirports);     // only for testing
@@ -40,6 +41,22 @@ module.exports = function (app) {
     function findAirportById(req, res){
         var airportId = req.params['airportId'];
         airportModel.findAirportById(airportId).exec(
+            function (err, airport) {
+                if (err) {
+                    return res.status(400).send(err);
+                }
+                if (airport == null) {
+                    return res.sendStatus(404);
+                }
+                return res.status(200).send(airport);
+            }
+        );
+
+    }
+
+    function findAirportByCode(req, res){
+        var airportCode = req.params['airportCode'];
+        airportModel.findByAirportCode(airportCode).exec(
             function (err, airport) {
                 if (err) {
                     return res.status(400).send(err);

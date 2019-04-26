@@ -5,6 +5,7 @@ var flightModel = mongoose.model('Flight', flightSchema);
 
 // flightService at server side will call this function
 flightModel.createFlight = createFlight;
+flightModel.findFlightById = findFlightById;
 flightModel.findFlightByNumber = findFlightByFlightNumber;
 flightModel.findFlightByAirlineCode = findFlightByAirlineCode;
 flightModel.findFlightByFlightStatus = findFlightByFlightStatus;
@@ -30,6 +31,11 @@ module.exports = flightModel;
 function createFlight(flight) {
     console.log('Mongoose: createFlight() called');
     return flightModel.create(flight);
+}
+
+function findFlightById(flightId) {
+    console.log('Mongoose: findFlightById() called: ' + flightId);
+    return flightModel.findById(flightId);
 }
 
 /**

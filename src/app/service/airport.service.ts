@@ -45,4 +45,9 @@ export class AirportService {
     // '/api/website/:websiteId/airport/:airportId'
     return this.http.delete<Airport>(this.baseUrl + this.airportApiUrl + airportId);
   }
+
+  findAirportByCode(airportCode) {
+    console.log('front airport service findAirportByCode() called');
+    return this.http.get<Airport>(this.baseUrl + this.airportApiUrl + 'airport-code/' + airportCode);
+  }
 }

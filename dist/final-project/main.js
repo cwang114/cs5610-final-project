@@ -48,6 +48,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_admin_airport_airport_update_airport_update_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/admin-airport/airport-update/airport-update.component */ "./src/app/components/admin-airport/airport-update/airport-update.component.ts");
 /* harmony import */ var _components_admin_user_user_update_user_update_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/admin-user/user-update/user-update.component */ "./src/app/components/admin-user/user-update/user-update.component.ts");
 /* harmony import */ var _components_flight_search_flight_search_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/flight-search/flight-search.component */ "./src/app/components/flight-search/flight-search.component.ts");
+/* harmony import */ var _components_admin_flight_flight_new_flight_new_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/admin-flight/flight-new/flight-new.component */ "./src/app/components/admin-flight/flight-new/flight-new.component.ts");
+/* harmony import */ var _components_admin_flight_flight_update_flight_update_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/admin-flight/flight-update/flight-update.component */ "./src/app/components/admin-flight/flight-update/flight-update.component.ts");
+
+
 
 
 
@@ -72,6 +76,8 @@ var routes = [
     { path: 'admin/airport-new', component: _components_admin_airport_airport_new_airport_new_component__WEBPACK_IMPORTED_MODULE_11__["AirportNewComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
     { path: 'admin/airport-update/:airportId', component: _components_admin_airport_airport_update_airport_update_component__WEBPACK_IMPORTED_MODULE_12__["AirportUpdateComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
     { path: 'admin/flight-management', component: _components_admin_flight_flight_management_flight_management_component__WEBPACK_IMPORTED_MODULE_9__["FlightManagementComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
+    { path: 'admin/flight-new', component: _components_admin_flight_flight_new_flight_new_component__WEBPACK_IMPORTED_MODULE_15__["FlightNewComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
+    { path: 'admin/flight-update/:flightId', component: _components_admin_flight_flight_update_flight_update_component__WEBPACK_IMPORTED_MODULE_16__["FlightUpdateComponent"], canActivate: [_service_auth_guard_service__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"]] },
     { path: 'login', component: _components_main_page_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     { path: 'register', component: _components_main_page_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"] },
     { path: 'find-flights', component: _components_flight_search_flight_search_component__WEBPACK_IMPORTED_MODULE_14__["FlightSearchComponent"] },
@@ -187,6 +193,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_admin_airport_airport_update_airport_update_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/admin-airport/airport-update/airport-update.component */ "./src/app/components/admin-airport/airport-update/airport-update.component.ts");
 /* harmony import */ var _components_admin_user_user_update_user_update_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/admin-user/user-update/user-update.component */ "./src/app/components/admin-user/user-update/user-update.component.ts");
 /* harmony import */ var _components_flight_search_flight_search_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/flight-search/flight-search.component */ "./src/app/components/flight-search/flight-search.component.ts");
+/* harmony import */ var _service_flight_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./service/flight.service */ "./src/app/service/flight.service.ts");
+/* harmony import */ var _components_admin_flight_flight_new_flight_new_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/admin-flight/flight-new/flight-new.component */ "./src/app/components/admin-flight/flight-new/flight-new.component.ts");
+/* harmony import */ var _components_admin_flight_flight_update_flight_update_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/admin-flight/flight-update/flight-update.component */ "./src/app/components/admin-flight/flight-update/flight-update.component.ts");
+
+
+
 
 
 
@@ -243,6 +255,8 @@ var AppModule = /** @class */ (function () {
                 _components_admin_airport_airport_update_airport_update_component__WEBPACK_IMPORTED_MODULE_28__["AirportUpdateComponent"],
                 _components_admin_user_user_update_user_update_component__WEBPACK_IMPORTED_MODULE_29__["UserUpdateComponent"],
                 _components_flight_search_flight_search_component__WEBPACK_IMPORTED_MODULE_30__["FlightSearchComponent"],
+                _components_admin_flight_flight_new_flight_new_component__WEBPACK_IMPORTED_MODULE_32__["FlightNewComponent"],
+                _components_admin_flight_flight_update_flight_update_component__WEBPACK_IMPORTED_MODULE_33__["FlightUpdateComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -252,7 +266,7 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
                 angular_datatables__WEBPACK_IMPORTED_MODULE_23__["DataTablesModule"]
             ],
-            providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_13__["UserService"], _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuardService"], _service_authentication_service__WEBPACK_IMPORTED_MODULE_17__["AuthenticationService"], _service_airport_service__WEBPACK_IMPORTED_MODULE_25__["AirportService"]],
+            providers: [_service_user_service__WEBPACK_IMPORTED_MODULE_13__["UserService"], _service_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuardService"], _service_authentication_service__WEBPACK_IMPORTED_MODULE_17__["AuthenticationService"], _service_airport_service__WEBPACK_IMPORTED_MODULE_25__["AirportService"], _service_flight_service__WEBPACK_IMPORTED_MODULE_31__["FlightService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -578,7 +592,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  flight-management works!\n</p>\n"
+module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- DataTales Example -->\n        <div class=\"card shadow mb-4\">\n          <div class=\"card-header d-sm-flex align-items-center justify-content-between\">\n            <h6 class=\"m-0 font-weight-bold text-primary mr-auto\">All Flights</h6>\n            <button class=\"btn btn-success d-sm-inline-block\" (click)=\"createFlight()\">Create New Flight</button>\n          </div>\n          <div class=\"card-body\">\n            <div class=\"table-responsive\">\n              <table id=\"example\" class=\"table table-hover\" cellspacing=\"0\" width=\"100%\">\n                <thead>\n                <tr>\n                  <th>Number</th>\n                  <th>Origin</th>\n                  <th>Destination</th>\n                  <th>Departure</th>\n                  <th>Arrival</th>\n                  <th>Aircraft Type</th>\n                  <th>Update</th>\n                  <th>Delete</th>\n                </tr>\n                </thead>\n\n                <tbody>\n                <tr *ngFor=\"let flight of flights\">\n                  <td>{{flight.operatingAirlineCode}} {{flight.flightNumber}}</td>\n                  <td>{{flight.origin.airportCode}}</td>\n                  <td>{{flight.destination.airportCode}}</td>\n                  <td>{{parseDate(flight.scheduledDepartureTime)}}</td>\n                  <td>{{parseDate(flight.scheduledArrivalTime)}}</td>\n                  <td>{{flight.aircraftType}}</td>\n                  <td><button class=\"btn btn-primary\" (click)=\"updateFlight(flight._id)\">Update</button></td>\n                  <td><button class=\"btn btn-danger\" (click)=\"deleteFlight(flight._id)\">Delete</button></td>\n                </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-admin-footer></app-admin-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<app-admin-logout></app-admin-logout>\n\n</body>\n\n"
 
 /***/ }),
 
@@ -594,12 +608,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlightManagementComponent", function() { return FlightManagementComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_flight_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../service/flight.service */ "./src/app/service/flight.service.ts");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var datatables_net__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(datatables_net__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
 
 
 var FlightManagementComponent = /** @class */ (function () {
-    function FlightManagementComponent() {
+    function FlightManagementComponent(activatedRoute, router, flightService, chRef) {
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.flightService = flightService;
+        this.chRef = chRef;
     }
     FlightManagementComponent.prototype.ngOnInit = function () {
+        console.log('on init called');
+    };
+    FlightManagementComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        console.log('after view init called');
+        this.flightService.findAllFlights().subscribe(function (flights) {
+            _this.flights = flights;
+            // You'll have to wait that changeDetection occurs and projects data into
+            // the HTML template, you can ask Angular to that for you ;-)
+            _this.chRef.detectChanges();
+            _this.initDatatable();
+        });
+    };
+    FlightManagementComponent.prototype.ngOnDestroy = function () {
+        // Do not forget to unsubscribe the event
+        this.destroyDataTable();
+    };
+    FlightManagementComponent.prototype.initDatatable = function () {
+        // Now you can use jQuery DataTables :
+        var table = $('table');
+        this.dataTable = table.DataTable({
+            select: true
+        });
+    };
+    FlightManagementComponent.prototype.reInitDatatable = function () {
+        var _this = this;
+        this.destroyDataTable();
+        setTimeout(function () { return _this.initDatatable(); }, 0);
+    };
+    FlightManagementComponent.prototype.destroyDataTable = function () {
+        if (this.dataTable) {
+            this.dataTable.destroy();
+            this.dataTable = null;
+        }
+    };
+    FlightManagementComponent.prototype.createFlight = function () {
+        this.router.navigate(['admin', 'flight-new']);
+    };
+    FlightManagementComponent.prototype.updateFlight = function (flightId) {
+        this.router.navigate(['admin', 'flight-update', flightId]);
+    };
+    FlightManagementComponent.prototype.deleteFlight = function (flightId) {
+        var _this = this;
+        this.flightService.deleteFlight(flightId).subscribe(function () {
+            _this.flightService.findAllFlights().subscribe(function (flights) {
+                _this.flights = flights;
+                _this.reInitDatatable();
+            });
+        });
+    };
+    FlightManagementComponent.prototype.parseDate = function (oldDate) {
+        // console.log('date get full year is: ' + date.getFullYear());
+        var date = new Date(oldDate);
+        var year = date.getFullYear().toString();
+        var month = date.getMonth().toString();
+        var day = date.getDate().toString();
+        var hour = date.getHours().toString();
+        hour = (hour.length < 2) ? '0' + hour : hour;
+        var minute = date.getMinutes().toString();
+        minute = (minute.length < 2) ? '0' + minute : minute;
+        return year + '/' + month + '/' + day + ', ' + hour + ':' + minute;
     };
     FlightManagementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -607,9 +693,231 @@ var FlightManagementComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./flight-management.component.html */ "./src/app/components/admin-flight/flight-management/flight-management.component.html"),
             styles: [__webpack_require__(/*! ./flight-management.component.css */ "./src/app/components/admin-flight/flight-management/flight-management.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _service_flight_service__WEBPACK_IMPORTED_MODULE_3__["FlightService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], FlightManagementComponent);
     return FlightManagementComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-new/flight-new.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-new/flight-new.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW4tZmxpZ2h0L2ZsaWdodC1uZXcvZmxpZ2h0LW5ldy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-new/flight-new.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-new/flight-new.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n        <form #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"flightNumber\" class=\"font-weight-bold\">Flight Number</label>\n            <input id=\"flightNumber\"\n                   name=\"flightNumber\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   placeholder=\"Flight Number\"\n                   ngModel\n                   required\n                   #flightNumber=\"ngModel\">\n          </div> <!-- form-group// -->\n          <!--operating air line-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"operatingAirlineCode\" class=\"font-weight-bold\">Operating Airline Code</label>\n              <input id=\"operatingAirlineCode\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"operatingAirlineCode\"\n                     placeholder=\"Operating Airline Code\"\n                     ngModel\n                     required\n                     #operatingAirlineCode=ngModel>\n            </div>\n            <div class=\"col\">\n              <label for=\"operatingAirlineName\" class=\"font-weight-bold\">Operating AirLine Name</label>\n              <input id=\"operatingAirlineName\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"operatingAirlineName\"\n                     placeholder=\"Operating Airline Name\"\n                     ngModel\n                     required\n                     #operatingAirLineName=ngModel>\n            </div>\n          </div>\n          <!--end operating airline-->\n          <!--marketing airline-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"marketingAirlineCode\" class=\"font-weight-bold\">Marketing Airline Code</label>\n              <input id=\"marketingAirlineCode\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"marketingAirlineCode\"\n                     placeholder=\"Marketing Airline Code\"\n                     ngModel\n                     required\n                     #marketingAirlineCode=ngModel>\n            </div>\n            <div class=\"col\">\n              <label for=\"marketingAirLineName\" class=\"font-weight-bold\">Marketing AirLine Name</label>\n              <input id=\"marketingAirLineName\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"marketingAirlineName\"\n                     placeholder=\"Marketing Airline Name\"\n                     ngModel\n                     required\n                     #marketingAirLineName=ngModel>\n            </div>\n          </div>\n          <!--end marketing airline-->\n\n          <!--status, origin and destination-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"flightStatus\" class=\"font-weight-bold\">Status</label>\n              <div id=\"flightStatus\">\n                <select class=\"form-control\"\n                        name=\"flightStatus\"\n                        required\n                        ngModel\n                        #flightStatus=\"ngModel\">\n                  <option value=\"On time\">On time</option>\n                  <option value=\"Delayed\">Delayed</option>\n                  <option value=\"Cancelled\">Cancelled</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"origin\" class=\"font-weight-bold\">Origin</label>\n              <input id=\"origin\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"Origin\"\n                     name=\"origin\"\n                     ngModel\n                     required\n                     #origin=ngModel>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"destination\" class=\"font-weight-bold\">Destination</label>\n              <input id=\"destination\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"Destination\"\n                     name=\"destination\"\n                     ngModel\n                     required\n                     #destination=ngModel>\n            </div>\n\n          </div>\n          <!-- end status, origin and destination-->\n          <!--departure and arrival-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"departureTime\" class=\"font-weight-bold\">Departure Time (Local)</label>\n              <div>\n                <input id=\"departureTime\"\n                       type=\"datetime-local\"\n                       class=\"form-control\"\n                       name=\"scheduledDepartureTime\"\n                      ngModel\n                      required>\n              </div>\n            </div>\n\n          </div>\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"arrivalTime\" class=\"font-weight-bold\">Arrival Time (Local)</label>\n              <div>\n                <input id=\"arrivalTime\"\n                        type=\"datetime-local\"\n                       class=\"form-control\"\n                       name=\"scheduledArrivalTime\"\n                      ngModel\n                      required>\n              </div>\n            </div>\n          </div>\n          <!--end of departure and arrival-->\n          <!--distance and duration, arrival day indicator-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"arrivalDayIndicator\" class=\"font-weight-bold\">Arrival Day</label>\n              <div id=\"arrivalDayIndicator\">\n                <select class=\"form-control\"\n                        name=\"arrivalDayIndicator\"\n                        required\n                        ngModel\n                        #arrivalDayIndicator=\"ngModel\">\n                  <option value=\"N\">Next Day</option>\n                  <option value=\"P\">Previous Day</option>\n                  <option value=\"S\">Same Day</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"distance\" class=\"font-weight-bold\">Distance (in miles)</label>\n              <input id=\"distance\"\n                     type=\"number\"\n                     min=\"0\"\n                     class=\"form-control\"\n                     placeholder=\"Distance\"\n                     name=\"distance\"\n                     ngModel\n                     required\n                     #distance=ngModel>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"duration\" class=\"font-weight-bold\">Duration</label>\n              <input id=\"duration\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"2h53m\"\n                     name=\"duration\"\n                     ngModel\n                     required\n                     #duration=ngModel>\n            </div>\n\n          </div>\n          <button class=\"btn btn-success btn-block mt-4\" (click)=\"saveFlight()\">Create New Flight</button>\n        </form>\n\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-admin-footer></app-admin-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<app-admin-logout></app-admin-logout>\n\n</body>\n\n\n<!--main body-->\n<div class=\"container-fluid pt-2\">\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-new/flight-new.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-new/flight-new.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: FlightNewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlightNewComponent", function() { return FlightNewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _service_flight_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../service/flight.service */ "./src/app/service/flight.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _model_Flight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../model/Flight */ "./src/app/model/Flight.ts");
+/* harmony import */ var _service_airport_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../service/airport.service */ "./src/app/service/airport.service.ts");
+
+
+
+
+
+
+
+var FlightNewComponent = /** @class */ (function () {
+    function FlightNewComponent(flightService, airportService, activatedRoute, router) {
+        this.flightService = flightService;
+        this.airportService = airportService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+    }
+    FlightNewComponent.prototype.ngOnInit = function () {
+    };
+    FlightNewComponent.prototype.saveFlight = function () {
+        var _this = this;
+        var origin = this.flightForm.value.origin;
+        var destination = this.flightForm.value.destination;
+        this.airportService.findAirportByCode(origin).subscribe(function (airport) {
+            _this.originAirport = airport;
+            _this.airportService.findAirportByCode(destination).subscribe(function (des) {
+                _this.destinationAirport = des;
+                var flightNumber = _this.flightForm.value.flightNumber;
+                var operatingAirLineCode = _this.flightForm.value.operatingAirlineCode;
+                var operatingAirLineName = _this.flightForm.value.operatingAirlineName;
+                var marketingAirLineCode = _this.flightForm.value.marketingAirlineCode;
+                var marketingAirLineName = _this.flightForm.value.marketingAirlineName;
+                var flightStatus = _this.flightForm.value.flightStatus;
+                var distance = _this.flightForm.value.distance;
+                var scheduledDepartureTime = _this.flightForm.value.scheduledDepartureTime;
+                var scheduledArrivalTime = _this.flightForm.value.scheduledArrivalTime;
+                var duration = _this.flightForm.value.duration;
+                var arrivalDayIndicator = _this.flightForm.value.arrivalDayIndicator;
+                var aircraftType = _this.flightForm.value.aircraftType;
+                var mealCode = _this.flightForm.value.mealCode;
+                var flight = new _model_Flight__WEBPACK_IMPORTED_MODULE_5__["Flight"](flightNumber, operatingAirLineCode, operatingAirLineName, marketingAirLineCode, marketingAirLineName, flightStatus, _this.originAirport, _this.destinationAirport, distance, scheduledDepartureTime, scheduledArrivalTime, duration, arrivalDayIndicator, aircraftType, mealCode);
+                _this.flightService.createFlight(flight).subscribe(function (flight) { return _this.goBack(); });
+            });
+        });
+    };
+    FlightNewComponent.prototype.goBack = function () {
+        this.router.navigate(['/admin/flight-management']);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"])
+    ], FlightNewComponent.prototype, "flightForm", void 0);
+    FlightNewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-flight-new',
+            template: __webpack_require__(/*! ./flight-new.component.html */ "./src/app/components/admin-flight/flight-new/flight-new.component.html"),
+            styles: [__webpack_require__(/*! ./flight-new.component.css */ "./src/app/components/admin-flight/flight-new/flight-new.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_flight_service__WEBPACK_IMPORTED_MODULE_3__["FlightService"],
+            _service_airport_service__WEBPACK_IMPORTED_MODULE_6__["AirportService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], FlightNewComponent);
+    return FlightNewComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-update/flight-update.component.css":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-update/flight-update.component.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW4tZmxpZ2h0L2ZsaWdodC11cGRhdGUvZmxpZ2h0LXVwZGF0ZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-update/flight-update.component.html":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-update/flight-update.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body id=\"page-top\">\n\n<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <app-admin-sidebar></app-admin-sidebar>\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-admin-topbar></app-admin-topbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n        <form #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"flightNumber\" class=\"font-weight-bold\">Flight Number</label>\n            <input id=\"flightNumber\"\n                   name=\"flightNumber\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   placeholder=\"Flight Number\"\n                   [(ngModel)]=\"flight.flightNumber\"\n                   #flightNumber=\"ngModel\">\n          </div> <!-- form-group// -->\n          <!--operating air line-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"operatingAirlineCode\" class=\"font-weight-bold\">Operating Airline Code</label>\n              <input id=\"operatingAirlineCode\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"operatingAirlineCode\"\n                     placeholder=\"Operating Airline Code\"\n                     [(ngModel)]=\"flight.operatingAirlineCode\"\n                     #operatingAirlineCode=ngModel>\n            </div>\n            <div class=\"col\">\n              <label for=\"operatingAirLineName\" class=\"font-weight-bold\">Operating AirLine Name</label>\n              <input id=\"operatingAirLineName\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"operatingAirlineName\"\n                     placeholder=\"Operating AirLine Name\"\n                     [(ngModel)]=\"flight.operatingAirlineName\"\n                     #operatingAirLineName=ngModel>\n            </div>\n          </div>\n          <!--end operating airline-->\n          <!--marketing airline-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"marketingAirlineCode\" class=\"font-weight-bold\">Marketing Airline Code</label>\n              <input id=\"marketingAirlineCode\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"marketingAirlineCode\"\n                     placeholder=\"Marketing Airline Code\"\n                     [(ngModel)]=\"flight.marketingAirlineCode\"\n                     #marketingAirlineCode=ngModel>\n            </div>\n            <div class=\"col\">\n              <label for=\"marketingAirLineName\" class=\"font-weight-bold\">Marketing AirLine Name</label>\n              <input id=\"marketingAirLineName\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     name=\"marketingAirlineName\"\n                     placeholder=\"Marketing AirLine Name\"\n                     [(ngModel)]=\"flight.marketingAirlineName\"\n                     #marketingAirLineName=ngModel>\n            </div>\n          </div>\n          <!--end marketing airline-->\n\n          <!--status, origin and destination-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"flightStatus\" class=\"font-weight-bold\">Status</label>\n              <div id=\"flightStatus\">\n                <select class=\"form-control\"\n                        name=\"flightStatus\"\n                        [(ngModel)]=\"flight.flightStatus\"\n                        #flightStatus=\"ngModel\">\n                  <option value=\"On time\">On time</option>\n                  <option value=\"Delayed\">Delayed</option>\n                  <option value=\"Cancelled\">Cancelled</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"origin\" class=\"font-weight-bold\">Origin</label>\n              <input id=\"origin\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"Origin\"\n                     name=\"origin\"\n                     [(ngModel)]=\"flight.origin.airportCode\"\n                     #origin=ngModel>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"destination\" class=\"font-weight-bold\">Destination</label>\n              <input id=\"destination\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"Destination\"\n                     name=\"destination\"\n                     [(ngModel)]=\"flight.destination.airportCode\"\n                     #destination=ngModel>\n            </div>\n\n          </div>\n          <!-- end status, origin and destination-->\n          <!--departure and arrival-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"departureTime\" class=\"font-weight-bold\">Departure Time (Local)</label>\n              <div>\n                <input id=\"departureTime\"\n                       type=\"datetime-local\"\n                       class=\"form-control\"\n                       name=\"scheduledDepartureTime\"\n                       [(value)]=\"flight.scheduledDepartureTime\">\n              </div>\n            </div>\n\n          </div>\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col\">\n              <label for=\"arrivalTime\" class=\"font-weight-bold\">Arrival Time (Local)</label>\n              <div>\n                <input id=\"arrivalTime\"\n                       type=\"datetime-local\"\n                       class=\"form-control\"\n                       name=\"scheduledArrivalTime\"\n                       [(value)]=\"flight.scheduledArrivalTime\">\n              </div>\n            </div>\n          </div>\n          <!--end of departure and arrival-->\n          <!--distance and duration, arrival day indicator-->\n          <div class=\"row align-items-center mt-4\">\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"arrivalDayIndicator\" class=\"font-weight-bold\">Arrival Day</label>\n              <div id=\"arrivalDayIndicator\">\n                <select class=\"form-control\"\n                        name=\"arrivalDayIndicator\"\n                        [(ngModel)]=\"flight.arrivalDayIndicator\"\n                        #arrivalDayIndicator=\"ngModel\">\n                  <option value=\"N\">Next Day</option>\n                  <option value=\"P\">Previous Day</option>\n                  <option value=\"S\">Same Day</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"distance\" class=\"font-weight-bold\">Distance (in miles)</label>\n              <input id=\"distance\"\n                     type=\"number\"\n                     min=\"0\"\n                     class=\"form-control\"\n                     placeholder=\"Distance\"\n                     name=\"distance\"\n                     [(ngModel)]=\"flight.distance\"\n                     #distance=ngModel>\n            </div>\n            <div class=\"col-12 col-sm-4 col-md-4\">\n              <label for=\"duration\" class=\"font-weight-bold\">Duration</label>\n              <input id=\"duration\"\n                     type=\"text\"\n                     class=\"form-control\"\n                     placeholder=\"2h53m\"\n                     name=\"duration\"\n                     [(ngModel)]=\"flight.duration\"\n                     #duration=ngModel>\n            </div>\n\n          </div>\n          <button class=\"btn btn-warning btn-block mt-4\" (click)=\"updateFlight()\">Update Flight</button>\n        </form>\n\n\n      </div>\n      <!-- /.container-fluid -->\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-admin-footer></app-admin-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<!-- Scroll to Top Button-->\n<a class=\"scroll-to-top rounded\" href=\"#page-top\">\n  <i class=\"fas fa-angle-up\"></i>\n</a>\n\n<app-admin-logout></app-admin-logout>\n\n</body>\n\n\n<!--main body-->\n<div class=\"container-fluid pt-2\">\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/admin-flight/flight-update/flight-update.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/admin-flight/flight-update/flight-update.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: FlightUpdateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlightUpdateComponent", function() { return FlightUpdateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _model_Flight__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../model/Flight */ "./src/app/model/Flight.ts");
+/* harmony import */ var _service_flight_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../service/flight.service */ "./src/app/service/flight.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_airport_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../service/airport.service */ "./src/app/service/airport.service.ts");
+
+
+
+
+
+
+
+var FlightUpdateComponent = /** @class */ (function () {
+    function FlightUpdateComponent(flightService, activatedRoute, router, airportService) {
+        this.flightService = flightService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.airportService = airportService;
+    }
+    FlightUpdateComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            // console.log(params);
+            _this.flightId = params.flightId;
+        });
+        this.flightService.findFlightById(this.flightId).subscribe(function (flight) { return _this.flight = flight; });
+    };
+    FlightUpdateComponent.prototype.updateFlight = function () {
+        var _this = this;
+        var origin = this.flightForm.value.origin;
+        var destination = this.flightForm.value.destination;
+        this.airportService.findAirportByCode(origin).subscribe(function (airport) {
+            _this.originAirport = airport;
+            _this.airportService.findAirportByCode(destination).subscribe(function (des) {
+                _this.destinationAirport = des;
+                var flightNumber = _this.flightForm.value.flightNumber;
+                var operatingAirLineCode = _this.flightForm.value.operatingAirlineCode;
+                var operatingAirLineName = _this.flightForm.value.operatingAirlineName;
+                var marketingAirLineCode = _this.flightForm.value.marketingAirlineCode;
+                var marketingAirLineName = _this.flightForm.value.marketingAirlineName;
+                var flightStatus = _this.flightForm.value.flightStatus;
+                var distance = _this.flightForm.value.distance;
+                var scheduledDepartureTime = _this.flightForm.value.scheduledDepartureTime;
+                var scheduledArrivalTime = _this.flightForm.value.scheduledArrivalTime;
+                var duration = _this.flightForm.value.duration;
+                var arrivalDayIndicator = _this.flightForm.value.arrivalDayIndicator;
+                var aircraftType = _this.flightForm.value.aircraftType;
+                var mealCode = _this.flightForm.value.mealCode;
+                var flight = new _model_Flight__WEBPACK_IMPORTED_MODULE_3__["Flight"](flightNumber, operatingAirLineCode, operatingAirLineName, marketingAirLineCode, marketingAirLineName, flightStatus, _this.originAirport, _this.destinationAirport, distance, scheduledDepartureTime, scheduledArrivalTime, duration, arrivalDayIndicator, aircraftType, mealCode);
+                _this.flightService.updateFlight(_this.flightId, flight).subscribe(function (flight) { return _this.goBack(); });
+            });
+        });
+    };
+    FlightUpdateComponent.prototype.goBack = function () {
+        this.router.navigate(['/admin/flight-management']);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('f'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"])
+    ], FlightUpdateComponent.prototype, "flightForm", void 0);
+    FlightUpdateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-flight-update',
+            template: __webpack_require__(/*! ./flight-update.component.html */ "./src/app/components/admin-flight/flight-update/flight-update.component.html"),
+            styles: [__webpack_require__(/*! ./flight-update.component.css */ "./src/app/components/admin-flight/flight-update/flight-update.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_flight_service__WEBPACK_IMPORTED_MODULE_4__["FlightService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _service_airport_service__WEBPACK_IMPORTED_MODULE_6__["AirportService"]])
+    ], FlightUpdateComponent);
+    return FlightUpdateComponent;
 }());
 
 
@@ -1656,6 +1964,41 @@ var Airport = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/Flight.ts":
+/*!*********************************!*\
+  !*** ./src/app/model/Flight.ts ***!
+  \*********************************/
+/*! exports provided: Flight */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Flight", function() { return Flight; });
+var Flight = /** @class */ (function () {
+    function Flight(flightNumber, operatingAirlineCode, operatingAirlineName, marketingAirlineCode, marketingAirlineName, flightStatus, origin, destination, distance, scheduledDepartureTime, scheduledArrivalTime, duration, arrivalDayIndicator, aircraftType, mealCode) {
+        this.flightNumber = flightNumber;
+        this.operatingAirlineCode = operatingAirlineCode;
+        this.operatingAirlineName = operatingAirlineName;
+        this.marketingAirlineCode = marketingAirlineCode;
+        this.marketingAirlineName = marketingAirlineName;
+        this.flightStatus = flightStatus;
+        this.origin = origin;
+        this.destination = destination;
+        this.distance = distance;
+        this.scheduledDepartureTime = scheduledDepartureTime;
+        this.scheduledArrivalTime = scheduledArrivalTime;
+        this.duration = duration;
+        this.arrivalDayIndicator = arrivalDayIndicator;
+        this.aircraftType = aircraftType;
+        this.mealCode = mealCode;
+    }
+    return Flight;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/Role.ts":
 /*!*******************************!*\
   !*** ./src/app/model/Role.ts ***!
@@ -1756,6 +2099,10 @@ var AirportService = /** @class */ (function () {
         console.log('front airport service deleteAirport() called');
         // '/api/website/:websiteId/airport/:airportId'
         return this.http.delete(this.baseUrl + this.airportApiUrl + airportId);
+    };
+    AirportService.prototype.findAirportByCode = function (airportCode) {
+        console.log('front airport service findAirportByCode() called');
+        return this.http.get(this.baseUrl + this.airportApiUrl + 'airport-code/' + airportCode);
     };
     AirportService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1900,6 +2247,66 @@ var AuthenticationService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
     ], AuthenticationService);
     return AuthenticationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/flight.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/service/flight.service.ts ***!
+  \*******************************************/
+/*! exports provided: FlightService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlightService", function() { return FlightService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+
+var FlightService = /** @class */ (function () {
+    function FlightService(http) {
+        this.http = http;
+        this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl;
+        this.flightApiUrl = '/api/flight/';
+    }
+    FlightService.prototype.findAllFlights = function () {
+        console.log('front flight service findAllFlights() called');
+        return this.http.get(this.baseUrl + '/api/find/flight/all');
+    };
+    FlightService.prototype.createFlight = function (flight) {
+        console.log('front flight service createFlight() called');
+        return this.http.post(this.baseUrl + this.flightApiUrl, flight);
+    };
+    FlightService.prototype.findFlightById = function (flightId) {
+        console.log('front flight service findflightById() called');
+        // Only need to call server's url to get the data.
+        return this.http.get(this.baseUrl + this.flightApiUrl + flightId);
+    };
+    FlightService.prototype.updateFlight = function (flightId, flight) {
+        console.log('front flight service updateFlight() called');
+        // '/api/website/:websiteId/flight/:flightId'
+        return this.http.put(this.baseUrl + this.flightApiUrl + flightId, flight);
+    };
+    FlightService.prototype.deleteFlight = function (flightId) {
+        console.log('front flight service deleteFlight() called');
+        // '/api/website/:websiteId/flight/:flightId'
+        return this.http.delete(this.baseUrl + this.flightApiUrl + flightId);
+    };
+    FlightService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
+    ], FlightService);
+    return FlightService;
 }());
 
 

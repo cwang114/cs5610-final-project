@@ -29,6 +29,9 @@ import { AdminLogoutComponent } from './components/profile-admin/admin-logout/ad
 import { AirportUpdateComponent } from './components/admin-airport/airport-update/airport-update.component';
 import { UserUpdateComponent } from './components/admin-user/user-update/user-update.component';
 import { FlightSearchComponent } from './components/flight-search/flight-search.component';
+import {FlightService} from './service/flight.service';
+import { FlightNewComponent } from './components/admin-flight/flight-new/flight-new.component';
+import { FlightUpdateComponent } from './components/admin-flight/flight-update/flight-update.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { FlightSearchComponent } from './components/flight-search/flight-search.
     AirportUpdateComponent,
     UserUpdateComponent,
     FlightSearchComponent,
+    FlightNewComponent,
+    FlightUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,7 @@ import { FlightSearchComponent } from './components/flight-search/flight-search.
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [UserService, AuthGuardService, AuthenticationService, AirportService],
+  providers: [UserService, AuthGuardService, AuthenticationService, AirportService, FlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

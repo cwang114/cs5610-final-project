@@ -12,6 +12,8 @@ import {AirportNewComponent} from './components/admin-airport/airport-new/airpor
 import {AirportUpdateComponent} from './components/admin-airport/airport-update/airport-update.component';
 import {UserUpdateComponent} from './components/admin-user/user-update/user-update.component';
 import {FlightSearchComponent} from './components/flight-search/flight-search.component';
+import {FlightNewComponent} from './components/admin-flight/flight-new/flight-new.component';
+import {FlightUpdateComponent} from './components/admin-flight/flight-update/flight-update.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'admin/airport-new', component: AirportNewComponent, canActivate: [AuthGuardService]},
   {path: 'admin/airport-update/:airportId', component: AirportUpdateComponent, canActivate: [AuthGuardService]},
   {path: 'admin/flight-management', component: FlightManagementComponent, canActivate: [AuthGuardService]},
+  {path: 'admin/flight-new', component: FlightNewComponent, canActivate: [AuthGuardService]},
+  {path: 'admin/flight-update/:flightId', component: FlightUpdateComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'find-flights', component: FlightSearchComponent},
